@@ -304,7 +304,6 @@ Configuration file: E:/GitWorkSpace/blog/_config.yml
 ## 捐助 donate
 
 
-关于旧版博客，我不再维护，同时我把代码转移到了另一个仓库，见 [rekeryang/old-blog](https://github.com/rekeryang/old-blog)。
 
 ## License
 

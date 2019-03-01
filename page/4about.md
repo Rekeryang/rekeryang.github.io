@@ -11,7 +11,7 @@ type: page
 
 ## 关于我
 
-<iframe src="https://githubbadge.appspot.com/rekeryang?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe>
+<iframe src="https://avatars0.githubusercontent.com/u/6647941?s=460&v=4" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe>
 
 
 主要兴趣集中在互联网开发，大前端和大数据应用。
@@ -19,7 +19,7 @@ type: page
 
 ## 联系我
 
-* GitHub：[Gaohaoyang](https://github.com/rekeryang)
+* GitHub：[rekeryang](https://github.com/rekeryang)
 * email：3806165@qq.com
 
 
