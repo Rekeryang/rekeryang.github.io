@@ -14,13 +14,13 @@ url: "https://rekeryang.github.io" # the base hostname & protocol for your site
 permalink: /:year/:month/:day/:title/
 
 # other links
-twitter_username: gaohaoyang126
-facebook_username: gaohaoyang.water
+twitter_username:
+facebook_username: 
 github_username:  Rekeryang
-email: 3806165@rekeryang.com
-weibo_username: 睿客杨
-zhihu_username: 睿客杨
-linkedIn_username: 睿客杨
+email: 3806165@qq.com
+weibo_username: 睿客杨一帆
+zhihu_username: 睿客杨一帆
+linkedIn_username: 睿客杨一帆
 dribbble_username:
 
 description_footer: 本站记录我前端之旅的沿途风景！
