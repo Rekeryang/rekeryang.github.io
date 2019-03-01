@@ -11,7 +11,6 @@ type: page
 
 ## 关于我
 
-<img src="https://avatars0.githubusercontent.com/u/6647941?s=460&v=4" style="border: 0;height: 142px;width: 200px;overflow: hidden;" >
 
 
 主要兴趣集中在互联网开发，大前端和大数据应用。
