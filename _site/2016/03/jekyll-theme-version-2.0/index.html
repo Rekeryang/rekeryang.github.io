@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+  <title>对这个 jekyll 博客主题的改版和重构</title>
+  <meta name="description" content="">
+  <meta name="author" content="robotkang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="对这个 jekyll 博客主题的改版和重构">
+  <meta name="twitter:description" content="">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="对这个 jekyll 博客主题的改版和重构">
+  <meta property="og:description" content="">
+  
+  <link rel="icon" type="image/png" href="/public/images/favicon.png" />
+  <link href="/public/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/public/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2016/03/jekyll-theme-version-2.0/">
+  <link rel="alternate" type="application/rss+xml" title="睿客杨一帆" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+
+
+<script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=2854006074878156134' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();</script>
+
+
+<!-- 百度统计 -->
+  
+
+<!-- google 统计 -->
+  
+
+<!-- Valine Comment -->
+    
+</head>
+
+
+  <body style="height:1000px;">
+
+   <meta name="baidu-site-verification" content="0L5MKMrHOb" />
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/liuyan" title="liuyan" class="btn-mobile-menu__icon">
+                      留言
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/ziyuan" title="ziyuan" class="btn-mobile-menu__icon">
+                      资源
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+
+
+    <header class="panel-cover panel-cover--collapsed">
+<style type="text/css">
+
+</style>
+
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">
+            <a href="/#blog" title="前往 睿客杨一帆 的主页" class="blog-button">
+                <div class="img"><img src="/public/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back">
+                        <h1>
+                            
+                                Rekeryang
+                            
+                        </h1>
+                        <p>
+                           
+                                移动互联网开发
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for 睿客杨一帆" class="blog-button">睿客杨一帆</a></h1>
+        
+        <hr class="panel-cover__divider" style="height:1px;border:none;border-top:1px solid #555555;"/>
+        <p class="panel-cover__description">欢迎来到我的个人博客~</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" style="height:1px;border:none;border-top:1px solid #555555;"/>
+
+        
+
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/liuyan" title="liuyan">留言</a></li>
+                
+                  <li class="navigation__item"><a href="/ziyuan" title="ziyuan">资源</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+    
+    <div class="panel-cover--overlay cover-disabled"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- latex公式支持代码 end -->
+
+<!-- 代码高亮设置 begin 
+<link rel="stylesheet" href="/css/pygments-default.css">
+ 代码高亮设置 end -->
+
+
+<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title">对这个 jekyll 博客主题的改版和重构</h1>
+    <div class="post-meta" style="color:#C3C3C3;border-bottom-width: 1px;border-bottom-style: dashed;padding-bottom: 0px;padding-top: 5px;">
+      <img src="/public/images/calendar.png" width="20px"/> 
+      <time datetime="2016-03-12 11:40:18 +0800" itemprop="datePublished" class="post-meta__date date">2016-03-12</time>  
+         
+      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span></span>
+    </p>
+    </div>
+  </header>
+
+  <section class="post">
+
+    <ul id="markdown-toc">
+  <li><a href="#改版重构说明" id="markdown-toc-改版重构说明">改版重构说明</a></li>
+  <li><a href="#rubygems-无法访问ssl-证书问题" id="markdown-toc-rubygems-无法访问ssl-证书问题">RubyGems 无法访问，SSL 证书问题</a>    <ul>
+      <li><a href="#错误呈现" id="markdown-toc-错误呈现">错误呈现</a></li>
+      <li><a href="#解决方法" id="markdown-toc-解决方法">解决方法</a></li>
+    </ul>
+  </li>
+  <li><a href="#jekyll-paginate-依赖缺失" id="markdown-toc-jekyll-paginate-依赖缺失">jekyll-paginate 依赖缺失</a>    <ul>
+      <li><a href="#错误呈现-1" id="markdown-toc-错误呈现-1">错误呈现</a></li>
+      <li><a href="#解决方法-1" id="markdown-toc-解决方法-1">解决方法</a></li>
+    </ul>
+  </li>
+  <li><a href="#被-foxit-pdf-reader-占用4000端口" id="markdown-toc-被-foxit-pdf-reader-占用4000端口">被 Foxit pdf reader 占用4000端口</a>    <ul>
+      <li><a href="#错误呈现-2" id="markdown-toc-错误呈现-2">错误呈现</a></li>
+      <li><a href="#解决方法-2" id="markdown-toc-解决方法-2">解决方法</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>本文主要说明对这个博客主题的改版和代码重构的过程。这个简洁高雅的博客主题受到了很多朋友的喜欢。在写第一版界面时，我对前端并不是很熟悉，对<code class="highlighter-rouge">Jekyll</code>也不熟悉。现在距离当时也一年了，对自己当时写的代码也不太满意了，同时<code class="highlighter-rouge">Jekyll</code>如今也已经升级了，目前最新版为3.1.2。因此我在临近毕业尚未入职前做一下博客主题的代码重构和改版吧。</p>
+
+<p>主要想做这些事情有：添加归档，添加标签，添加分类页面，主页显示文章摘要，代码去除 jQuery 和 BootStrap，优化移动端显示，将所有变量写入配置文件<code class="highlighter-rouge">_config.yml</code>中等。再优化一些细节吧。希望更多人会喜欢。</p>
+
+<h2 id="改版重构说明">改版重构说明</h2>
+
+<ul>
+  <li>
+    <p><strong>使用 GitHub 风格的代码块 Markdown 写法 (Fenced code blocks)。</strong></p>
+
+    <p>即 GFM(github flavored markdown) 的方式。</p>
+
+    <p>Jekyll 已经升级至 3.1.2（2016-03），其中有一些新的要注意的地方，比如官网上说使用了 <code class="highlighter-rouge">Rouge</code> 去做代码高亮而不是默认的 <code class="highlighter-rouge">Pygments</code>，因为 <code class="highlighter-rouge">Jekyll</code> 本身是基于 Ruby 的，因此我看到官方说希望不再使用基于 Python 的 <code class="highlighter-rouge">Pygments</code> 了，而是都使用基于 Ruby 的代码。详情见官网升级说明 <a href="https://jekyllrb.com/docs/upgrading/2-to-3/#syntax-highlighter-changed">syntax-highlighter-changed</a>。</p>
+  </li>
+  <li>
+    <p><strong>首页中添加摘要</strong></p>
+
+    <p>摘要可以在每一篇 md 文件头中使用 excerpt 属性写出来。也可以在正文中，4个换行符来分割，这个设置见配置文件<code class="highlighter-rouge">_config.yml</code>。</p>
+  </li>
+  <li>
+    <p><strong>添加归档</strong></p>
+
+    <p>上一版中没有归档，现在专门做了一个归档页面，当文章很多时方便根据年份快速查阅。</p>
+  </li>
+  <li>
+    <p><strong>添加标签</strong></p>
+
+    <p>标签还是很有必要添加的，上一版中也没有这个功能。现在也可以根据标签查找文章了。同时标签还有一个重要的作用是，用来获取相似文章的。</p>
+  </li>
+  <li>
+    <p><strong>添加分类页</strong></p>
+
+    <p>之前的分类就是在首页中直接完成的，现在和标签和归档类似，我将分类单独制作为一页，方便查阅。</p>
+  </li>
+  <li>
+    <p><strong>去掉 jQuery 和 BootStrap</strong></p>
+
+    <p>我觉得太重了，没必要使用这两个库，使用原生 JavaScript 和 CSS就可以做到一样的效果，代码量大大减轻，载入速度略有提高。</p>
+  </li>
+  <li>
+    <p><strong>重写了demo页的瀑布流布局</strong></p>
+
+    <p>改变数据写死的方式，将数据用 json 格式录入，由 JavaScript 拼接为 HTML 代码。同时，使用 <a href="http://masonry.desandro.com/">Masonry</a>，重写了瀑布流布局。</p>
+  </li>
+  <li>
+    <p><strong>简化评论配置，支持 多说 和 disqus</strong></p>
+
+    <p>在<code class="highlighter-rouge">_config.yml</code>中评论配置直接添加自己的<code class="highlighter-rouge">short_name</code>，评论就能正常使用了。</p>
+  </li>
+</ul>
+
+<p>下面列举一些可能遇到的问题，至少我是遇到了：</p>
+
+<h2 id="rubygems-无法访问ssl-证书问题">RubyGems 无法访问，SSL 证书问题</h2>
+
+<p>以前我使用的是 RubyGems 的淘宝镜像<a href="https://ruby.taobao.org/">https://ruby.taobao.org/</a>。现在这个镜像已经不再维护了，作者 <a href="https://ruby-china.org/huacnlee">huacnlee (李华顺)</a> 转到 <a href="https://ruby-china.org/">Ruby China</a> 中继续维护了，详情见 <a href="https://gems.ruby-china.org/">RubyGems 镜像- Ruby China</a>。</p>
+
+<h3 id="错误呈现">错误呈现</h3>
+
+<p>在执行任何<code class="highlighter-rouge">gem</code>命令的时候出现以下错误：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
+    SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed (https://gems.ruby-china.org/specs.4.8.gz)
+</code></pre></div></div>
+
+<h3 id="解决方法">解决方法</h3>
+
+<p>根据 <a href="https://gems.ruby-china.org/">https://gems.ruby-china.org/</a> 页面最下方提供的 GitHub Issue 地址。</p>
+
+<p>可以进入这个 issue：<a href="https://github.com/ruby-china/rubygems-mirror/issues/3">https://github.com/ruby-china/rubygems-mirror/issues/3</a></p>
+
+<p>其中 sanlengjingvv 给出了一个链接地址 <a href="https://gist.github.com/fnichol/867550">https://gist.github.com/fnichol/867550</a> 里面提供了方法。我就是采用这里面的方法解决的。</p>
+
+<p>我使用的是 <a href="https://gist.github.com/fnichol/867550#the-manual-way-boring">The Manual Way</a>，因为 <a href="https://gist.github.com/fnichol/867550#the-ruby-way-fun">The Ruby Way</a> 我没有成功，不知道什么原因，有兴趣的朋友可以试试。下面说说我的具体操作吧。</p>
+
+<p>首先从 <a href="https://curl.haxx.se/ca/cacert.pem">https://curl.haxx.se/ca/cacert.pem</a> 将文件<code class="highlighter-rouge">cacert.pem</code>下载至 <code class="highlighter-rouge">C:\RailsInstaller\cacert.pem</code></p>
+
+<p>然后执行</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set SSL_CERT_FILE=C:\RailsInstaller\cacert.pem
+</code></pre></div></div>
+
+<p>就成功了，不会再出现 SSL 错误了。</p>
+
+<p>最后原文中说，为了长久设置，将这个目录存入控制面板中。我没理解是什么意思，是指环境变量吗？有朋友知道的话，欢迎留言告知我。</p>
+
+<p>我存入环境变量后，还是会出现 SSL 错误，这时再次执行上面那条命令即可。</p>
+
+<h2 id="jekyll-paginate-依赖缺失">jekyll-paginate 依赖缺失</h2>
+
+<p>因为 jekyll 3 中默认安装已经没有这个分页组件了，官方把这个分页组件插件化了，因此要独立安装。详情见 <a href="https://jekyllrb.com/docs/pagination/">https://jekyllrb.com/docs/pagination/</a>。</p>
+
+<h3 id="错误呈现-1">错误呈现</h3>
+
+<p>在启动 jekyll 服务的时候出现以下错误：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll serve
+Configuration file: c:/gitWorkSpace/blog-based-on-jekyll-3/_config.yml
+  Dependency Error: Yikes! It looks like you don't have jekyll-paginate or one of its dependencies installed. In order to use Jekyll as currently configured, you'll need to install this gem. The full error message from Ruby is: 'cannot load such file -- jekyll-paginate' If you run into trouble, you can find helpful resources at http://jekyllrb.com/help/!
+jekyll 3.1.2 | Error:  jekyll-paginate
+</code></pre></div></div>
+
+<h3 id="解决方法-1">解决方法</h3>
+
+<p>我们安装这个插件到本地即可。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll-paginate
+Fetching: jekyll-paginate-1.1.0.gem (100%)
+Successfully installed jekyll-paginate-1.1.0
+Parsing documentation for jekyll-paginate-1.1.0
+Installing ri documentation for jekyll-paginate-1.1.0
+Done installing documentation for jekyll-paginate after 3 seconds
+1 gem installed
+</code></pre></div></div>
+
+<h2 id="被-foxit-pdf-reader-占用4000端口">被 Foxit pdf reader 占用4000端口</h2>
+
+<h3 id="错误呈现-2">错误呈现</h3>
+
+<p>在本地使用命令</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll serve
+</code></pre></div></div>
+
+<p>出现错误，如下</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll serve
+Configuration file: E:/GitWorkSpace/blog/_config.yml
+           Source: E:/GitWorkSpace/blog
+      Destination: E:/GitWorkSpace/blog/_site
+Incremental build: disabled. Enable with --incremental
+     Generating...
+                   done in 0.547 seconds.
+ Please add the following to your Gemfile to avoid polling for changes:
+   gem 'wdm', '&gt;= 0.1.0' if Gem.win_platform?
+Auto-regeneration: enabled for 'E:/GitWorkSpace/blog'
+Configuration file: E:/GitWorkSpace/blog/_config.yml
+jekyll 3.1.1 | Error:  Permission denied - bind(2) for 127.0.0.1:4000
+</code></pre></div></div>
+
+<p>网上查阅后，这篇博文解决了我的问题。<a href="http://lxconan.github.io/2016/01/07/who-is-using-my-port/">谁占了我的端口 for Windows –By Liu Xia, ThoughtWorks Senior Consultant. .NET Expert</a></p>
+
+<p>上述报错主要原因是，jekyll 启动使用的4000端口被福昕pdf阅读器的自动更新进程占用了，关掉这个进程，jekyll在本地调试启动服务时就没有问题了。</p>
+
+<h3 id="解决方法-2">解决方法</h3>
+
+<p>简单的解决方法是：</p>
+
+<p>输入命令，查看各端口被占用情况</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>netstat -ano
+</code></pre></div></div>
+
+<p>找到4000端口被占用的<code class="highlighter-rouge">PID</code></p>
+
+<p>我的结果如下：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>协议  本地地址          外部地址          状态           PID
+TCP  0.0.0.0:80        0.0.0.0:0         LISTENING     4
+TCP  0.0.0.0:135       0.0.0.0:0         LISTENING     836
+TCP  0.0.0.0:445       0.0.0.0:0         LISTENING     4
+TCP  0.0.0.0:1801      0.0.0.0:0         LISTENING     2312
+TCP  0.0.0.0:2103      0.0.0.0:0         LISTENING     2312
+TCP  0.0.0.0:2105      0.0.0.0:0         LISTENING     2312
+TCP  0.0.0.0:2107      0.0.0.0:0         LISTENING     2312
+TCP  0.0.0.0:3306      0.0.0.0:0         LISTENING     2404
+TCP  0.0.0.0:3389      0.0.0.0:0         LISTENING     1172
+TCP  0.0.0.0:49664     0.0.0.0:0         LISTENING     584
+TCP  0.0.0.0:49665     0.0.0.0:0         LISTENING     1072
+TCP  0.0.0.0:49666     0.0.0.0:0         LISTENING     460
+TCP  0.0.0.0:49667     0.0.0.0:0         LISTENING     1000
+TCP  0.0.0.0:49670     0.0.0.0:0         LISTENING     696
+TCP  0.0.0.0:49678     0.0.0.0:0         LISTENING     2312
+TCP  0.0.0.0:49692     0.0.0.0:0         LISTENING     688
+TCP  127.0.0.1:4000    0.0.0.0:0         LISTENING     2476
+TCP  127.0.0.1:4000    127.0.0.1:55160   ESTABLISHED   2476
+TCP  127.0.0.1:4012    0.0.0.0:0         LISTENING     12724
+</code></pre></div></div>
+
+<p>可以看到4000端口的PID是2476。下面查看是什么进程，命令行中输入：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tasklist /svc /FI "PID eq 2476"
+</code></pre></div></div>
+
+<p>得到结果：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>映像名称                       PID 服务
+========================= ======== ============================================
+FoxitProtect.exe              2476 FxService
+</code></pre></div></div>
+
+<p>可以看到正是福昕阅读器。下面关掉这个服务就好了。在 win10 中进入任务管理器，选择服务选项卡，关闭这个服务就好了，如下图：</p>
+
+<p><img src="http://ww4.sinaimg.cn/large/7011d6cfjw1f1ty28wwj4j20g00aiju7.jpg" alt="" /></p>
+
+<p>当然也可以在启动jekyll服务的时候指定端口号，如下：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll serve --port 3000
+</code></pre></div></div>
+
+<p>这样在浏览器中输入 http://localhost:3000/ 就可以访问了。</p>
+
+<p>还可以在配置文件<code class="highlighter-rouge">_config.yml</code>中添加端口号设置（参考<a href="https://jekyllrb.com/docs/configuration/#serve-command-options">官网文档-Serve Command OptionsPermalink</a>），如下：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># port
+port: 1234
+</code></pre></div></div>
+
+<p>此时，启动jekyll服务后，访问 http://localhost:1234/ 即可</p>
+
+  </section>
+</article>
+
+
+<hr><br/><br/>
+<!--section>
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</section>-->
+
+
+
+<!--  css & js -->
+<link rel="stylesheet" href="/share-dist/css/share.min.css">
+
+<script src="/public/js/social-share.min.js"></script>
+
+<div class="share-component" data-mobile-sites="weibo,qq,qzone,tencent">
+
+
+</div>
+
+<br>
+
+<!--<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js"></script>
+    <title>打赏</title>
+    <style type="text/css">
+        .content{width:80%;margin:10px auto;}
+                .hide_box{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+        .shang_box{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+        .shang_box img{border:none;border-width:0;}
+        .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+        .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+        .shang_close{float:right;display:inline-block;}
+                .shang_logo{display:block;text-align:center;margin:20px auto;}
+        .shang_tit{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/dsimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+        .shang_tit p{color:#a3a3a3;text-align:center;font-size:16px;}
+        .shang_payimg{width:140px;padding:10px;border:6px solid #EA5F00;margin:0 auto;border-radius:3px;height:140px;}
+        .shang_payimg img{display:block;text-align:center;width:140px;height:140px; }
+        .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+        .radiobox{width: 16px;height: 16px;background: url('/dsimg/radio2.jpg');display: block;float: left;margin-top: 5px;margin-right: 14px;}
+        .checked .radiobox{background:url('/dsimg/radio1.jpg');}
+        .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:280px;}
+        .shang_payselect .pay_item{display:inline-block;margin-right:10px;float:left;}
+        .shang_info{clear:both;}
+		.shang_info p,.shang_info a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+    </style>
+</head>
+
+<body>
+    <div class="content">
+    <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">打赏</a></p>
+    <div class="hide_box"></div>
+    <div class="shang_box">
+    	<a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="/dsimg/close.jpg" alt="取消" /></a>
+        <img class="shang_logo" src="/dsimg/logos.png" alt="亢志军" />
+    	<div class="shang_tit">
+    		<p>感谢您的支持，我会继续努力的!</p>
+    	</div>
+    	<div class="shang_payimg">
+    		<img src="/public/images/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+    	</div>
+    		<div class="pay_explain">扫码打赏，你说多少就多少</div>
+    	<div class="shang_payselect">
+    		<div class="pay_item checked" data-id="alipay">
+	    		<span class="radiobox"></span>
+	    		<span class="pay_logo"><img src="/dsimg/alipay.jpg" alt="支付宝" /></span>
+    		</div>
+    		<div class="pay_item" data-id="weipay">
+	    		<span class="radiobox"></span>
+	    		<span class="pay_logo"><img src="/dsimg/wechat.jpg" alt="微信" /></span>
+    		</div>
+    	</div>
+    	<div class="shang_info">
+    		<p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+    		<p>Powered by <a href="robotkang.cc" target="_blank" title="亢志军">亢志军</a>，分享从这里开始，精彩与您同在</p>
+    	</div>
+    </div>
+    </div>
+    <script type="text/javascript">
+    $(function(){
+    	$(".pay_item").click(function(){
+    		$(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+    		var dataid=$(this).attr('data-id');
+    		$(".shang_payimg img").attr("src","/dsimg/"+dataid+"img.jpg");
+    		$("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+    	});
+    });
+    function dashangToggle(){
+    	$(".hide_box").fadeToggle();
+    	$(".shang_box").fadeToggle();
+    }
+    </script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>R</title>
+<link  href="/public/css/myreward.css" rel="stylesheet"  type="text/css">
+</head>
+<body>
+
+<div class="reward">
+	<div class="reward-button">赏 <span class="reward-code">
+		<span class="alipay-code"> <img class="alipay-img wdp-appear" src="/public/images/alipayimg.jpg"><b>支付宝打赏</b> </span>
+		<span class="wechat-code"> <img class="wechat-img wdp-appear" src="/public/images/weipayimg.jpg"><b>微信打赏</b> </span> </span>
+	</div>
+	<p class="reward-notice">如果文章对你有帮助，欢迎点击上方按钮打赏作者</a></p>
+</div>
+</body>
+</html>
+
+<section>
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2016/01/History-API/" data-toggle="tooltip" data-placement="top" title="前端处理动态 url 和 pushStatus 的使用">上一篇：  <span>前端处理动态 url 和 pushStatus 的使用</span>
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2016/05/regular-expression-group/" data-toggle="tooltip" data-placement="top" title="浅谈正则表达式中的分组和引用">下一篇：  <span>浅谈正则表达式中的分组和引用</span>
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+
+
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Valine - A simple comment system based on Leancloud.</title>
+    <!--Leancloud 操作库:-->
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!--Valine 的核心代码库:-->
+    <script src="/public/js/Valine.min.js"></script>
+
+
+</head>
+
+
+<a href="http://p.comworld.club/?u=44" target="_blank"><img src="https://robotkang-1257995526.cos.ap-chengdu.myqcloud.com/banner.jpg" width="100%" height="auto" alt="photos" display="block"/></a>
+<p>
+<p>
+    
+   <div class="comment"></div>
+    
+    <script>
+        new Valine({
+            // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+            av: AV, 
+            el: '.comment', // 
+            app_id: '5z3QHKTEMlSqxReRnfeFG1cC-gzGzoHsz', // 这里填写上面得到的APP ID
+            app_key: '59CrEdy9yw1xmqcDQ4JcJbWy', // 这里填写上面得到的APP KEY
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!', // [v1.0.7 new]留言框占位提示文字
+            avatar:'wavatar',
+            path:window.location.pathname,
+            guest_info:['nick','mail','link'] ,
+            pageSize:10,
+        });
+    </script>
+
+	
+
+<!--div id="plus"></div>
+<script src="https://qingqing.com/static/js/plus.js"></script-->
+
+
+
+
+<link href="/public/css/top.css/" rel="stylesheet" type="text/css" />
+<script src="/public/js/jquery.js?v=1.83.min/" type="text/javascript"></script>
+<script src="/public/js/top.js/"></script>
+<div style="display: none;" id="rocket-to-top">
+<div style="opacity:0;display: block;" class="level-2"></div>
+<div class="level-3"></div>
+
+
+
+
+
+            
+    <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Weibo -->
+          <li class="navigation__item_social">
+            <a href="http://weibo.com/522678560" title="@522678560 的微博" target="_blank">
+              <i class='social fa fa-weibo fa-2x'></i>
+              <span class="label">Weibo</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/rekeryang" title="@rekeryang 的 Github" target="_blank">
+              <i class='social fa fa-github fa-2x'></i>
+              <span class="label">Github</span>
+            </a>
+          </li>
+          
+          
+          
+
+          
+
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <i class='social fa fa-rss fa-2x'></i>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:3806165@qq.com" title="Contact me">
+              <i class='social fa fa-envelope fa-2x'></i>
+              <span class="label">Email</span>
+            </a>
+          </li>
+          
+
+          </ul>
+        </nav>
+
+        </div>
+
+
+
+        <div class = "footer_div">  
+           <p class="copyright text-muted">
+            Copyright &copy; 睿客杨一帆 2017-2019 Theme by <a href="http://robotkang.cc/">robotkang</a>|
+            <iframe
+                style="margin-left: 2px; margin-bottom:-5px;"
+                frameborder="0" scrolling="0" width="91px" height="20px"
+                src="https://ghbtns.com/github-btn.html?user=MengZheK&repo=kangblog.github.io&type=star&count=true" >
+            </iframe>|
+            
+<!-- cnzz -->
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261874359'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1261874359%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>|
+
+
+<!-- cc -->
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/cn/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/3.0/cn/80x15.png" /></a>
+
+
+</p>        	
+
+
+<!-- 访问统计 -->
+
+<div align="right">
+    			
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+ 
+      Total <span id="busuanzi_value_site_pv"></span> views.
+您是我的第<span id="busuanzi_value_site_uv"></span> 个访客..
+<span id="busuanzi_value_page_pv"></span> Hits
+  
+          </span>
+        </div>
+        <div>
+    </footer>
+</section>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+
+
+
+        </div>
+    
+
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/public/js/main.js"></script>
+
+<script type="text/javascript" src="/public/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    
+<!--小人只在首页显示 start*-->
+<div id="spig" class="spig">
+    <div id="message">正在加载中……</div>
+    <div id="mumu" class="mumu"></div>
+</div>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="/public/js/jquery.xiaoren.js"></script>
+<script type="text/javascript" src="/public/js/spig.js"></script>
+<link rel="stylesheet" href="/public/css/xiaoren.css" type="text/css"/>
+<script type="text/javascript">
+var isindex = true;
+var visitor = true;
+</script>
+
+
+<!--博客鼠标点击显示文字JS特效代码 -->
+
+<script type="text/javascript">
+
+var a_idx = 0;
+jQuery(document).ready(function($) {
+ $("body").click(function(e) {
+ var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善");
+ var $i = $("<span/>").text(a[a_idx]);
+ a_idx = (a_idx + 1) % a.length;
+ var x = e.pageX,
+ y = e.pageY;
+ $i.css({
+ "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+ "top": y - 20,
+ "left": x,
+ "position": "absolute",
+ "font-weight": "bold",
+ "color": "#ff6651"
+ });
+ $("body").append($i);
+ $i.animate({
+ "top": y - 180,
+ "opacity": 0
+ },
+ 1500,
+ function() {
+ $i.remove();
+ });
+ });
+});
+</script>
+
+</body>
+
+</html>

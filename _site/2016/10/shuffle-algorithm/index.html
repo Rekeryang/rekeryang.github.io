@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+  <title>Fisher–Yates shuffle 洗牌算法</title>
+  <meta name="description" content="">
+  <meta name="author" content="robotkang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Fisher–Yates shuffle 洗牌算法">
+  <meta name="twitter:description" content="">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Fisher–Yates shuffle 洗牌算法">
+  <meta property="og:description" content="">
+  
+  <link rel="icon" type="image/png" href="/public/images/favicon.png" />
+  <link href="/public/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/public/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2016/10/shuffle-algorithm/">
+  <link rel="alternate" type="application/rss+xml" title="睿客杨一帆" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+
+
+<script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=2854006074878156134' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();</script>
+
+
+<!-- 百度统计 -->
+  
+
+<!-- google 统计 -->
+  
+
+<!-- Valine Comment -->
+    
+</head>
+
+
+  <body style="height:1000px;">
+
+   <meta name="baidu-site-verification" content="0L5MKMrHOb" />
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/liuyan" title="liuyan" class="btn-mobile-menu__icon">
+                      留言
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/ziyuan" title="ziyuan" class="btn-mobile-menu__icon">
+                      资源
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+
+
+    <header class="panel-cover panel-cover--collapsed">
+<style type="text/css">
+
+</style>
+
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">
+            <a href="/#blog" title="前往 睿客杨一帆 的主页" class="blog-button">
+                <div class="img"><img src="/public/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back">
+                        <h1>
+                            
+                                Rekeryang
+                            
+                        </h1>
+                        <p>
+                           
+                                移动互联网开发
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for 睿客杨一帆" class="blog-button">睿客杨一帆</a></h1>
+        
+        <hr class="panel-cover__divider" style="height:1px;border:none;border-top:1px solid #555555;"/>
+        <p class="panel-cover__description">欢迎来到我的个人博客~</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" style="height:1px;border:none;border-top:1px solid #555555;"/>
+
+        
+
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/liuyan" title="liuyan">留言</a></li>
+                
+                  <li class="navigation__item"><a href="/ziyuan" title="ziyuan">资源</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+    
+    <div class="panel-cover--overlay cover-disabled"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- latex公式支持代码 end -->
+
+<!-- 代码高亮设置 begin 
+<link rel="stylesheet" href="/css/pygments-default.css">
+ 代码高亮设置 end -->
+
+
+<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title">Fisher–Yates shuffle 洗牌算法</h1>
+    <div class="post-meta" style="color:#C3C3C3;border-bottom-width: 1px;border-bottom-style: dashed;padding-bottom: 0px;padding-top: 5px;">
+      <img src="/public/images/calendar.png" width="20px"/> 
+      <time datetime="2016-10-16 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2016-10-16</time>  
+         
+      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span></span>
+    </p>
+    </div>
+  </header>
+
+  <section class="post">
+
+    <ul id="markdown-toc">
+  <li><a href="#fisher-and-yates-的原始版" id="markdown-toc-fisher-and-yates-的原始版">Fisher and Yates 的原始版</a></li>
+  <li><a href="#现代方法" id="markdown-toc-现代方法">现代方法</a></li>
+  <li><a href="#例子" id="markdown-toc-例子">例子</a>    <ul>
+      <li><a href="#迭代步骤演示" id="markdown-toc-迭代步骤演示">迭代步骤演示</a></li>
+      <li><a href="#动画演示" id="markdown-toc-动画演示">动画演示</a></li>
+    </ul>
+  </li>
+  <li><a href="#javascript-代码实现" id="markdown-toc-javascript-代码实现">JavaScript 代码实现</a></li>
+  <li><a href="#总结" id="markdown-toc-总结">总结</a></li>
+  <li><a href="#参考" id="markdown-toc-参考">参考</a></li>
+</ul>
+
+<p>简单来说 Fisher–Yates shuffle 算法是一个用来将一个有限集合生成一个随机排列的算法（数组随机排序）。这个算法生成的随机排列是等概率的。同时这个算法非常高效。</p>
+
+<p>本文主要介绍这个算法的来源、演变、原理。并举出一个例子为大家清晰的描述每次迭代过程。最后使用 JavaScript 代码将算法实现。</p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Riffle_shuffle.jpg/320px-Riffle_shuffle.jpg" alt="" /></p>
+
+<h2 id="fisher-and-yates-的原始版">Fisher and Yates 的原始版</h2>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Biologist_and_statistician_Ronald_Fisher.jpg/189px-Biologist_and_statistician_Ronald_Fisher.jpg" alt="" /></p>
+
+<p>Fisher–Yates shuffle 的原始版本，最初描述在 1938 年的 Ronald Fisher（上图） 和 Frank Yates 写的书中，书名为《Statistical tables for biological, agricultural and medical research》。他们使用纸和笔去描述了这个算法，并使用了一个随机数表来提供随机数。它给出了 1 到 N 的数字的的随机排列，具体步骤如下：</p>
+
+<ol>
+  <li>写下从 1 到 N 的数字</li>
+  <li>取一个从 1 到剩下的数字（包括这个数字）的随机数 k</li>
+  <li>从低位开始，得到第 k 个数字（这个数字还没有被取出），把它写在独立的一个列表的最后一位</li>
+  <li>重复第 2 步，直到所有的数字都被取出</li>
+  <li>第 3 步写出的这个序列，现在就是原始数字的随机排列</li>
+</ol>
+
+<p>已经证明如果第 2 步取出的数字是真随机的，那么最后得到的排序一定也是。</p>
+
+<h2 id="现代方法">现代方法</h2>
+
+<p>Fisher–Yates shuffle 算法的现代版本是为计算机设计的。由 Richard Durstenfeld 在1964年 描述。并且是被 Donald E. Knuth 在 《The Art of Computer Programming》 中推广。但是不管是 Durstenfeld 还是 Knuth，都没有在书的第一版中承认这个算法是 Fisher 和 Yates 的研究成果。也许他们并不知道。不过后来出版的 《The Art of Computer Programming》提到了 Fisher 和 Yates 贡献。</p>
+
+<p>现代版本的描述与原始略有不同，因为如果按照原始方法，愚蠢的计算机会花很多无用的时间去计算上述第 3 步的剩余数字。<strong>这里的方法是在每次迭代时交换这个被取出的数字到原始列表的最后</strong>。这样就将时间复杂度从 O(n^2) 减小到了 <strong>O(n)</strong>。算法的伪代码如下：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-- To shuffle an array a of n elements (indices 0..n-1):
+for i from n−1 downto 1 do
+     j ← random integer such that 0 ≤ j ≤ i
+     exchange a[j] and a[i]
+</code></pre></div></div>
+
+<h2 id="例子">例子</h2>
+
+<h3 id="迭代步骤演示">迭代步骤演示</h3>
+
+<p>根据每次迭代次数可以用下面的表格，描述这个算法的执行过程</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">随机数取值范围</th>
+      <th style="text-align: left">随机数</th>
+      <th style="text-align: right">原始数据</th>
+      <th style="text-align: left">结果</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: right">1 2 3 4 5 6 7 8</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1-8</td>
+      <td style="text-align: left">6</td>
+      <td style="text-align: right">1 2 3 4 5 7 8</td>
+      <td style="text-align: left">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1-7</td>
+      <td style="text-align: left">2</td>
+      <td style="text-align: right">1 7 3 4 5 8</td>
+      <td style="text-align: left">2 6</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1–6</td>
+      <td style="text-align: left">6</td>
+      <td style="text-align: right">1 7 3 4 5</td>
+      <td style="text-align: left">8 2 6</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1–5</td>
+      <td style="text-align: left">1</td>
+      <td style="text-align: right">5 7 3 4</td>
+      <td style="text-align: left">1 8 2 6</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1–4</td>
+      <td style="text-align: left">3</td>
+      <td style="text-align: right">5 7 4</td>
+      <td style="text-align: left">3 1 8 2 6</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1–3</td>
+      <td style="text-align: left">3</td>
+      <td style="text-align: right">5 7</td>
+      <td style="text-align: left">4 3 1 8 2 6</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1–2</td>
+      <td style="text-align: left">1</td>
+      <td style="text-align: right">7</td>
+      <td style="text-align: left">5 4 3 1 8 2 6</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="动画演示">动画演示</h3>
+
+<p>下面这个动画就是整个数组 0-19 的随机排序过程</p>
+
+<iframe height="317" scrolling="no" src="//codepen.io/haoyang/embed/jrvrQq/?height=317&amp;theme-id=dark&amp;default-tab=result&amp;embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="https://codepen.io/haoyang/pen/jrvrQq/">Fisher–Yates shuffle</a> by Chuan shi (<a href="http://codepen.io/haoyang">@haoyang</a>) on <a href="http://codepen.io">CodePen</a>.
+</iframe>
+
+<h2 id="javascript-代码实现">JavaScript 代码实现</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Fisher–Yates shuffle
+ */</span>
+<span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">shuffle</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">input</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="kd">var</span> <span class="nx">randomIndex</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="p">(</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
+        <span class="kd">var</span> <span class="nx">itemAtIndex</span> <span class="o">=</span> <span class="nx">input</span><span class="p">[</span><span class="nx">randomIndex</span><span class="p">];</span>
+
+        <span class="nx">input</span><span class="p">[</span><span class="nx">randomIndex</span><span class="p">]</span> <span class="o">=</span> <span class="nx">input</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+        <span class="nx">input</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">itemAtIndex</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">input</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>使用方式也很简单，直接用数组调用这个方法即可</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">].</span><span class="nx">shuffle</span><span class="p">()</span>
+
+<span class="c1">//[4, 6, 3, 2, 5, 1, 7, 8] // 每次结果都是随机的</span>
+</code></pre></div></div>
+
+<h2 id="总结">总结</h2>
+
+<p>总之，Fisher–Yates shuffle 算法是一个非常高效又公平的随机排序算法，如果有随机排序数组的需求，用这个就对了！</p>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Fisher–Yates shuffle From Wikipedia</a></li>
+</ul>
+
+  </section>
+</article>
+
+
+<hr><br/><br/>
+<!--section>
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</section>-->
+
+
+
+<!--  css & js -->
+<link rel="stylesheet" href="/share-dist/css/share.min.css">
+
+<script src="/public/js/social-share.min.js"></script>
+
+<div class="share-component" data-mobile-sites="weibo,qq,qzone,tencent">
+
+
+</div>
+
+<br>
+
+<!--<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js"></script>
+    <title>打赏</title>
+    <style type="text/css">
+        .content{width:80%;margin:10px auto;}
+                .hide_box{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+        .shang_box{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+        .shang_box img{border:none;border-width:0;}
+        .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+        .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+        .shang_close{float:right;display:inline-block;}
+                .shang_logo{display:block;text-align:center;margin:20px auto;}
+        .shang_tit{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/dsimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+        .shang_tit p{color:#a3a3a3;text-align:center;font-size:16px;}
+        .shang_payimg{width:140px;padding:10px;border:6px solid #EA5F00;margin:0 auto;border-radius:3px;height:140px;}
+        .shang_payimg img{display:block;text-align:center;width:140px;height:140px; }
+        .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+        .radiobox{width: 16px;height: 16px;background: url('/dsimg/radio2.jpg');display: block;float: left;margin-top: 5px;margin-right: 14px;}
+        .checked .radiobox{background:url('/dsimg/radio1.jpg');}
+        .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:280px;}
+        .shang_payselect .pay_item{display:inline-block;margin-right:10px;float:left;}
+        .shang_info{clear:both;}
+		.shang_info p,.shang_info a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+    </style>
+</head>
+
+<body>
+    <div class="content">
+    <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">打赏</a></p>
+    <div class="hide_box"></div>
+    <div class="shang_box">
+    	<a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="/dsimg/close.jpg" alt="取消" /></a>
+        <img class="shang_logo" src="/dsimg/logos.png" alt="亢志军" />
+    	<div class="shang_tit">
+    		<p>感谢您的支持，我会继续努力的!</p>
+    	</div>
+    	<div class="shang_payimg">
+    		<img src="/public/images/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+    	</div>
+    		<div class="pay_explain">扫码打赏，你说多少就多少</div>
+    	<div class="shang_payselect">
+    		<div class="pay_item checked" data-id="alipay">
+	    		<span class="radiobox"></span>
+	    		<span class="pay_logo"><img src="/dsimg/alipay.jpg" alt="支付宝" /></span>
+    		</div>
+    		<div class="pay_item" data-id="weipay">
+	    		<span class="radiobox"></span>
+	    		<span class="pay_logo"><img src="/dsimg/wechat.jpg" alt="微信" /></span>
+    		</div>
+    	</div>
+    	<div class="shang_info">
+    		<p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+    		<p>Powered by <a href="robotkang.cc" target="_blank" title="亢志军">亢志军</a>，分享从这里开始，精彩与您同在</p>
+    	</div>
+    </div>
+    </div>
+    <script type="text/javascript">
+    $(function(){
+    	$(".pay_item").click(function(){
+    		$(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+    		var dataid=$(this).attr('data-id');
+    		$(".shang_payimg img").attr("src","/dsimg/"+dataid+"img.jpg");
+    		$("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+    	});
+    });
+    function dashangToggle(){
+    	$(".hide_box").fadeToggle();
+    	$(".shang_box").fadeToggle();
+    }
+    </script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>R</title>
+<link  href="/public/css/myreward.css" rel="stylesheet"  type="text/css">
+</head>
+<body>
+
+<div class="reward">
+	<div class="reward-button">赏 <span class="reward-code">
+		<span class="alipay-code"> <img class="alipay-img wdp-appear" src="/public/images/alipayimg.jpg"><b>支付宝打赏</b> </span>
+		<span class="wechat-code"> <img class="wechat-img wdp-appear" src="/public/images/weipayimg.jpg"><b>微信打赏</b> </span> </span>
+	</div>
+	<p class="reward-notice">如果文章对你有帮助，欢迎点击上方按钮打赏作者</a></p>
+</div>
+</body>
+</html>
+
+<section>
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2016/07/git-clone-not-master-branch/" data-toggle="tooltip" data-placement="top" title="Git 如何 clone 非 master 分支的代码">上一篇：  <span>Git 如何 clone 非 master 分支的代码</span>
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2016/11/js-create-file-and-download/" data-toggle="tooltip" data-placement="top" title="使用 JavaScript 创建并下载文件">下一篇：  <span>使用 JavaScript 创建并下载文件</span>
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+
+
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Valine - A simple comment system based on Leancloud.</title>
+    <!--Leancloud 操作库:-->
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!--Valine 的核心代码库:-->
+    <script src="/public/js/Valine.min.js"></script>
+
+
+</head>
+
+
+<a href="http://p.comworld.club/?u=44" target="_blank"><img src="https://robotkang-1257995526.cos.ap-chengdu.myqcloud.com/banner.jpg" width="100%" height="auto" alt="photos" display="block"/></a>
+<p>
+<p>
+    
+   <div class="comment"></div>
+    
+    <script>
+        new Valine({
+            // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+            av: AV, 
+            el: '.comment', // 
+            app_id: '5z3QHKTEMlSqxReRnfeFG1cC-gzGzoHsz', // 这里填写上面得到的APP ID
+            app_key: '59CrEdy9yw1xmqcDQ4JcJbWy', // 这里填写上面得到的APP KEY
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!', // [v1.0.7 new]留言框占位提示文字
+            avatar:'wavatar',
+            path:window.location.pathname,
+            guest_info:['nick','mail','link'] ,
+            pageSize:10,
+        });
+    </script>
+
+	
+
+<!--div id="plus"></div>
+<script src="https://qingqing.com/static/js/plus.js"></script-->
+
+
+
+
+<link href="/public/css/top.css/" rel="stylesheet" type="text/css" />
+<script src="/public/js/jquery.js?v=1.83.min/" type="text/javascript"></script>
+<script src="/public/js/top.js/"></script>
+<div style="display: none;" id="rocket-to-top">
+<div style="opacity:0;display: block;" class="level-2"></div>
+<div class="level-3"></div>
+
+
+
+
+
+            
+    <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Weibo -->
+          <li class="navigation__item_social">
+            <a href="http://weibo.com/522678560" title="@522678560 的微博" target="_blank">
+              <i class='social fa fa-weibo fa-2x'></i>
+              <span class="label">Weibo</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/rekeryang" title="@rekeryang 的 Github" target="_blank">
+              <i class='social fa fa-github fa-2x'></i>
+              <span class="label">Github</span>
+            </a>
+          </li>
+          
+          
+          
+
+          
+
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <i class='social fa fa-rss fa-2x'></i>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:3806165@qq.com" title="Contact me">
+              <i class='social fa fa-envelope fa-2x'></i>
+              <span class="label">Email</span>
+            </a>
+          </li>
+          
+
+          </ul>
+        </nav>
+
+        </div>
+
+
+
+        <div class = "footer_div">  
+           <p class="copyright text-muted">
+            Copyright &copy; 睿客杨一帆 2017-2019 Theme by <a href="http://robotkang.cc/">robotkang</a>|
+            <iframe
+                style="margin-left: 2px; margin-bottom:-5px;"
+                frameborder="0" scrolling="0" width="91px" height="20px"
+                src="https://ghbtns.com/github-btn.html?user=MengZheK&repo=kangblog.github.io&type=star&count=true" >
+            </iframe>|
+            
+<!-- cnzz -->
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261874359'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1261874359%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>|
+
+
+<!-- cc -->
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/cn/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/3.0/cn/80x15.png" /></a>
+
+
+</p>        	
+
+
+<!-- 访问统计 -->
+
+<div align="right">
+    			
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+ 
+      Total <span id="busuanzi_value_site_pv"></span> views.
+您是我的第<span id="busuanzi_value_site_uv"></span> 个访客..
+<span id="busuanzi_value_page_pv"></span> Hits
+  
+          </span>
+        </div>
+        <div>
+    </footer>
+</section>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+
+
+
+        </div>
+    
+
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/public/js/main.js"></script>
+
+<script type="text/javascript" src="/public/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    
+<!--小人只在首页显示 start*-->
+<div id="spig" class="spig">
+    <div id="message">正在加载中……</div>
+    <div id="mumu" class="mumu"></div>
+</div>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="/public/js/jquery.xiaoren.js"></script>
+<script type="text/javascript" src="/public/js/spig.js"></script>
+<link rel="stylesheet" href="/public/css/xiaoren.css" type="text/css"/>
+<script type="text/javascript">
+var isindex = true;
+var visitor = true;
+</script>
+
+
+<!--博客鼠标点击显示文字JS特效代码 -->
+
+<script type="text/javascript">
+
+var a_idx = 0;
+jQuery(document).ready(function($) {
+ $("body").click(function(e) {
+ var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善");
+ var $i = $("<span/>").text(a[a_idx]);
+ a_idx = (a_idx + 1) % a.length;
+ var x = e.pageX,
+ y = e.pageY;
+ $i.css({
+ "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+ "top": y - 20,
+ "left": x,
+ "position": "absolute",
+ "font-weight": "bold",
+ "color": "#ff6651"
+ });
+ $("body").append($i);
+ $i.animate({
+ "top": y - 180,
+ "opacity": 0
+ },
+ 1500,
+ function() {
+ $i.remove();
+ });
+ });
+});
+</script>
+
+</body>
+
+</html>

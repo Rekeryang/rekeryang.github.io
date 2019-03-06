@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+  <title>JavaScript 语言精粹笔记1-语法、对象、函数</title>
+  <meta name="description" content="">
+  <meta name="author" content="robotkang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="JavaScript 语言精粹笔记1-语法、对象、函数">
+  <meta name="twitter:description" content="">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="JavaScript 语言精粹笔记1-语法、对象、函数">
+  <meta property="og:description" content="">
+  
+  <link rel="icon" type="image/png" href="/public/images/favicon.png" />
+  <link href="/public/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/public/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2016/06/JavaScript-good-parts-note1/">
+  <link rel="alternate" type="application/rss+xml" title="睿客杨一帆" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+
+
+<script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=2854006074878156134' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();</script>
+
+
+<!-- 百度统计 -->
+  
+
+<!-- google 统计 -->
+  
+
+<!-- Valine Comment -->
+    
+</head>
+
+
+  <body style="height:1000px;">
+
+   <meta name="baidu-site-verification" content="0L5MKMrHOb" />
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/liuyan" title="liuyan" class="btn-mobile-menu__icon">
+                      留言
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/ziyuan" title="ziyuan" class="btn-mobile-menu__icon">
+                      资源
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+
+
+    <header class="panel-cover panel-cover--collapsed">
+<style type="text/css">
+
+</style>
+
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">
+            <a href="/#blog" title="前往 睿客杨一帆 的主页" class="blog-button">
+                <div class="img"><img src="/public/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back">
+                        <h1>
+                            
+                                Rekeryang
+                            
+                        </h1>
+                        <p>
+                           
+                                移动互联网开发
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for 睿客杨一帆" class="blog-button">睿客杨一帆</a></h1>
+        
+        <hr class="panel-cover__divider" style="height:1px;border:none;border-top:1px solid #555555;"/>
+        <p class="panel-cover__description">欢迎来到我的个人博客~</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" style="height:1px;border:none;border-top:1px solid #555555;"/>
+
+        
+
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/liuyan" title="liuyan">留言</a></li>
+                
+                  <li class="navigation__item"><a href="/ziyuan" title="ziyuan">资源</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+    
+    <div class="panel-cover--overlay cover-disabled"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- latex公式支持代码 end -->
+
+<!-- 代码高亮设置 begin 
+<link rel="stylesheet" href="/css/pygments-default.css">
+ 代码高亮设置 end -->
+
+
+<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title">JavaScript 语言精粹笔记1-语法、对象、函数</h1>
+    <div class="post-meta" style="color:#C3C3C3;border-bottom-width: 1px;border-bottom-style: dashed;padding-bottom: 0px;padding-top: 5px;">
+      <img src="/public/images/calendar.png" width="20px"/> 
+      <time datetime="2016-06-07 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2016-06-07</time>  
+         
+      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span></span>
+    </p>
+    </div>
+  </header>
+
+  <section class="post">
+
+    <ul id="markdown-toc">
+  <li><a href="#语法" id="markdown-toc-语法">语法</a>    <ul>
+      <li><a href="#空白" id="markdown-toc-空白">空白</a></li>
+      <li><a href="#标识符" id="markdown-toc-标识符">标识符</a></li>
+      <li><a href="#数字" id="markdown-toc-数字">数字</a></li>
+      <li><a href="#字符串" id="markdown-toc-字符串">字符串</a></li>
+      <li><a href="#语句" id="markdown-toc-语句">语句</a></li>
+      <li><a href="#表达式" id="markdown-toc-表达式">表达式</a></li>
+      <li><a href="#字面量" id="markdown-toc-字面量">字面量</a></li>
+      <li><a href="#函数" id="markdown-toc-函数">函数</a></li>
+    </ul>
+  </li>
+  <li><a href="#对象" id="markdown-toc-对象">对象</a>    <ul>
+      <li><a href="#对象字面量" id="markdown-toc-对象字面量">对象字面量</a></li>
+      <li><a href="#检索" id="markdown-toc-检索">检索</a></li>
+      <li><a href="#更新" id="markdown-toc-更新">更新</a></li>
+      <li><a href="#引用" id="markdown-toc-引用">引用</a></li>
+      <li><a href="#原型" id="markdown-toc-原型">原型</a></li>
+      <li><a href="#反射" id="markdown-toc-反射">反射</a></li>
+      <li><a href="#枚举" id="markdown-toc-枚举">枚举</a></li>
+      <li><a href="#删除" id="markdown-toc-删除">删除</a></li>
+      <li><a href="#减少全局变量污染" id="markdown-toc-减少全局变量污染">减少全局变量污染</a></li>
+    </ul>
+  </li>
+  <li><a href="#函数-1" id="markdown-toc-函数-1">函数</a>    <ul>
+      <li><a href="#函数对象" id="markdown-toc-函数对象">函数对象</a></li>
+      <li><a href="#函数字面量" id="markdown-toc-函数字面量">函数字面量</a></li>
+      <li><a href="#调用" id="markdown-toc-调用">调用</a>        <ul>
+          <li><a href="#方法调用模式" id="markdown-toc-方法调用模式">方法调用模式</a></li>
+          <li><a href="#函数调用模式" id="markdown-toc-函数调用模式">函数调用模式</a></li>
+          <li><a href="#构造器调用模式" id="markdown-toc-构造器调用模式">构造器调用模式</a></li>
+          <li><a href="#apply-调用模式" id="markdown-toc-apply-调用模式">Apply 调用模式</a></li>
+        </ul>
+      </li>
+      <li><a href="#参数" id="markdown-toc-参数">参数</a></li>
+      <li><a href="#返回" id="markdown-toc-返回">返回</a></li>
+      <li><a href="#异常" id="markdown-toc-异常">异常</a></li>
+      <li><a href="#扩充类型的功能" id="markdown-toc-扩充类型的功能">扩充类型的功能</a></li>
+      <li><a href="#递归" id="markdown-toc-递归">递归</a></li>
+      <li><a href="#作用域" id="markdown-toc-作用域">作用域</a></li>
+      <li><a href="#闭包" id="markdown-toc-闭包">闭包</a></li>
+      <li><a href="#回调" id="markdown-toc-回调">回调</a></li>
+      <li><a href="#模块" id="markdown-toc-模块">模块</a></li>
+      <li><a href="#级联" id="markdown-toc-级联">级联</a></li>
+      <li><a href="#柯里化" id="markdown-toc-柯里化">柯里化</a></li>
+      <li><a href="#记忆" id="markdown-toc-记忆">记忆</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>记录一下阅读蝴蝶书的笔记，本篇为第一部分包含书中前三章内容：语法、对象和函数。</p>
+
+<p><img src="https://img3.doubanio.com/lpic/s3651235.jpg" alt="" /></p>
+
+<p>原书中第一章为精华，做了一些周边介绍，略去。</p>
+
+<h2 id="语法">语法</h2>
+
+<h3 id="空白">空白</h3>
+
+<p>这里说一下JavaScript的注释，一种是 <code class="highlighter-rouge">/* */</code> 包围的块注释，另一种是 <code class="highlighter-rouge">//</code> 开头的行注释。</p>
+
+<p>因为块注释的字符可能是JavaScript中正则表达式字面量，因此不是很安全，如：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
+    var rm_a = /a*/</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+<span class="o">*</span><span class="sr">/</span><span class="err">
+</span></code></pre></div></div>
+
+<h3 id="标识符">标识符</h3>
+
+<p>标识符由一个字母开头，后面可选择性的加上一个或多个字母、数字或下划线。要避免保留字。</p>
+
+<p>标识符被用于语句、变量、参数、属性名、运算符和标记。</p>
+
+<h3 id="数字">数字</h3>
+
+<p>可以存在指数部分，100和1e2完全相等</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">100</span> <span class="o">===</span> <span class="mi">1</span><span class="nx">e2</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>使用<code class="highlighter-rouge">isNaN</code>来检测<code class="highlighter-rouge">NaN</code>。</p>
+
+<h3 id="字符串">字符串</h3>
+
+<p>当年 JavaScript 被创建的时候，Unicode 是16位字符集，因此 JavaScript 字符串是16位的。</p>
+
+<p>用双引号或单引号包裹。</p>
+
+<p>重点说一下转义字符<code class="highlighter-rouge">\</code></p>
+
+<p>反斜杠后面可以跟<code class="highlighter-rouge">"</code>, <code class="highlighter-rouge">'</code>, <code class="highlighter-rouge">\</code>, <code class="highlighter-rouge">/</code>, <code class="highlighter-rouge">b</code> (backspace), <code class="highlighter-rouge">f</code> (formfeed), <code class="highlighter-rouge">n</code>, <code class="highlighter-rouge">r</code> (carriage return), <code class="highlighter-rouge">t</code>, <code class="highlighter-rouge">u1234</code></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'A'</span> <span class="o">===</span> <span class="s1">'</span><span class="err">\</span><span class="s1">u0041'</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<h3 id="语句">语句</h3>
+
+<p>每个<code class="highlighter-rouge">&lt;script&gt;</code>标签的内容被一起抛到一个公共的全局名字空间中。</p>
+
+<p><code class="highlighter-rouge">{...}</code>代码块不会创建新的作用域，因此变量应该被定义在函数的头部，而不是在代码块中。</p>
+
+<p>下列值当做假：</p>
+
+<ul>
+  <li><code class="highlighter-rouge">false</code></li>
+  <li><code class="highlighter-rouge">null</code></li>
+  <li><code class="highlighter-rouge">undefined</code></li>
+  <li><code class="highlighter-rouge">''</code></li>
+  <li><code class="highlighter-rouge">0</code></li>
+  <li><code class="highlighter-rouge">NaN</code></li>
+</ul>
+
+<p>其他所有值都当做真</p>
+
+<p><code class="highlighter-rouge">for in</code>语句枚举对象的所有属性名（键名），使用<code class="highlighter-rouge">object.hasOwnProperty(variable)</code>来确定这个属性名是该对象成员，还是来自原型链。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="nx">myvar</span> <span class="k">in</span> <span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">myvar</span><span class="p">))</span> <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="表达式">表达式</h3>
+
+<p>运算符优先级</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>运算符</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">.</code> <code class="highlighter-rouge">[]</code> <code class="highlighter-rouge">()</code></td>
+      <td>提取属性与调用函数</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">delete</code> <code class="highlighter-rouge">new</code> <code class="highlighter-rouge">typeof</code> <code class="highlighter-rouge">+</code> <code class="highlighter-rouge">-</code> <code class="highlighter-rouge">!</code></td>
+      <td>一元运算符</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">*</code> <code class="highlighter-rouge">/</code> <code class="highlighter-rouge">%</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">+</code> <code class="highlighter-rouge">-</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&gt;=</code> <code class="highlighter-rouge">&lt;=</code> <code class="highlighter-rouge">&gt;</code> <code class="highlighter-rouge">&lt;</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">===</code> <code class="highlighter-rouge">!==</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&amp;&amp;</code></td>
+      <td>逻辑与</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">||</code></td>
+      <td>逻辑或</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">?:</code></td>
+      <td>三目</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="字面量">字面量</h3>
+
+<p>对象字面量是一种可以方便地按指定规格创建新对象的表示法。</p>
+
+<p>数组字面量是一种可以方便地按指定规格创建新数组的表示法。</p>
+
+<h3 id="函数">函数</h3>
+
+<p>函数字面量定义了函数值。后续章节详谈。</p>
+
+<h2 id="对象">对象</h2>
+
+<p>对象是属性的容器，每一个属性都拥有名字和值。属性的名字可以是包含空字符串在内的任意字符串。属性的值可以是除<code class="highlighter-rouge">undefined</code>值之外的任何值。</p>
+
+<p>JavaScript 包含一种原型链的特性，允许对象继承另一个对象的属性。正确地使用它能减少对象初始化时消耗的时间和内存。</p>
+
+<h3 id="对象字面量">对象字面量</h3>
+
+<p>一个对象字面量就是包围在一对花括号中的零或多个“名/值”对。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">empty_object</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="kd">var</span> <span class="nx">stooge</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">firstName</span><span class="p">:</span> <span class="s1">'Haoyang'</span><span class="p">,</span>
+    <span class="na">lastName</span><span class="p">:</span> <span class="s1">'Gao'</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="检索">检索</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">stooge</span><span class="p">.</span><span class="nx">firstName</span><span class="p">);</span> <span class="c1">// Haoyang</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">stooge</span><span class="p">[</span><span class="s1">'firstName'</span><span class="p">]);</span> <span class="c1">// Haoyang</span>
+</code></pre></div></div>
+
+<p>不存在的属性返回<code class="highlighter-rouge">undefined</code>。</p>
+
+<p>使用<code class="highlighter-rouge">||</code>来填充默认值。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">stooge</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">||</span> <span class="s1">'Joe'</span><span class="p">);</span> <span class="c1">// Haoyang</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">stooge</span><span class="p">.</span><span class="nx">age</span> <span class="o">||</span> <span class="mi">25</span><span class="p">);</span> <span class="c1">// 25</span>
+</code></pre></div></div>
+
+<h3 id="更新">更新</h3>
+
+<p>直接使用赋值语句更新，若不存在这个属性，则作为扩充操作。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">stooge</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">=</span> <span class="s1">'aaa'</span>
+<span class="nx">stooge</span><span class="p">.</span><span class="nx">nickName</span> <span class="o">=</span> <span class="s1">'peip'</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">stooge</span><span class="p">)</span> <span class="c1">//Object {firstName: "aaa", lastName: "Gao", nickName: "peip"}</span>
+</code></pre></div></div>
+
+<h3 id="引用">引用</h3>
+
+<p>对象通过引用来传递他们永远不会被复制。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">stooge</span>
+<span class="nx">x</span><span class="p">.</span><span class="nx">hair</span> <span class="o">=</span> <span class="s1">'black'</span>
+<span class="nx">stooge</span><span class="p">.</span><span class="nx">hair</span> <span class="c1">//"black"</span>
+</code></pre></div></div>
+
+<h3 id="原型">原型</h3>
+
+<p>每一个对象都连接到一个原型对象，并且它可以从中继承属性。所有通过字面量创建的对象都连接到<code class="highlighter-rouge">Object.prototype</code>，它是JavaScript中的标配对象。</p>
+
+<p>可以使用<code class="highlighter-rouge">Object.create()</code>方法创建一个使用原对象作为其原型的新对象。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">anotherStooge</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">stooge</span><span class="p">)</span>
+<span class="nx">anotherStooge</span><span class="p">.</span><span class="nx">firstName</span> <span class="c1">//"aaa"</span>
+<span class="nx">anotherStooge</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">=</span> <span class="s1">'bbb'</span>
+<span class="nx">anotherStooge</span><span class="p">.</span><span class="nx">firstName</span> <span class="c1">//"bbb"</span>
+<span class="nx">anotherStooge</span><span class="p">.</span><span class="nx">hair</span> <span class="c1">//"black"</span>
+</code></pre></div></div>
+
+<p>新对象先查找自己的属性，若不存在则会向原型方向查找。</p>
+
+<p><img src="http://ww1.sinaimg.cn/large/7011d6cfjw1f4ieu7focqj207h05caaf.jpg" alt="" /></p>
+
+<p>当我们对某个对象作出改变时，不会触及该对象的原型。</p>
+
+<p>原型关系是一种动态关系。如果我们添加一个新的属性到原型中，该属性会立即对所有基于该原型创建的对象可见。</p>
+
+<h3 id="反射">反射</h3>
+
+<p>在计算机科学中，反射是指计算机程序在运行时（Run time）可以访问、检测和修改它本身状态或行为的一种能力。</p>
+
+<p>检查对象并确定对象有什么属性是很容易的事情，只要试着去检索该属性并验证取得的值。</p>
+
+<p><code class="highlighter-rouge">typeof</code>用来确定对象属性的类型。</p>
+
+<p><code class="highlighter-rouge">hasOwnProperty</code>，若对象拥有独有的属性，它将返回<code class="highlighter-rouge">true</code>。不会检查原型链。</p>
+
+<h3 id="枚举">枚举</h3>
+
+<p>使用<code class="highlighter-rouge">for in</code>可以遍历一个对象中的所有属性名，包括原型链上的属性名。可以使用<code class="highlighter-rouge">hasOwnProperty</code>过滤原型链上的属性，使用<code class="highlighter-rouge">typeof</code>来排除函数。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">name</span> <span class="k">in</span> <span class="nx">anotherStooge</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">anotherStooge</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="k">typeof</span> <span class="nx">anotherStooge</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">!==</span> <span class="s1">'function'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">'---&gt;'</span> <span class="o">+</span> <span class="nx">anotherStooge</span><span class="p">[</span><span class="nx">name</span><span class="p">])</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// firstName---&gt;bbb</span>
+</code></pre></div></div>
+
+<p>属性名是无序的，若想保持顺序应使用数组和<code class="highlighter-rouge">for</code>循环。</p>
+
+<h3 id="删除">删除</h3>
+
+<p><code class="highlighter-rouge">delete</code>可以用来删除对象的属性。若对象包含该属性，则会被移除。它不会触及原型链中的任何对象。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">anotherStooge</span><span class="p">.</span><span class="nx">firstName</span> <span class="c1">//"bbb"</span>
+<span class="k">delete</span> <span class="nx">anotherStooge</span><span class="p">.</span><span class="nx">firstName</span>
+<span class="nx">anotherStooge</span><span class="p">.</span><span class="nx">firstName</span> <span class="c1">//"aaa"</span>
+</code></pre></div></div>
+
+<h3 id="减少全局变量污染">减少全局变量污染</h3>
+
+<p>JavaScript 可以随意的定义全局变量来容纳应用的所有资源。但这会削弱程序的灵活性，应避免使用全局变量。</p>
+
+<p>最小化使用全局变量的方法之一是为应用只创建一个唯一的全局变量。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">MYAPP</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="nx">MYAPP</span><span class="p">.</span><span class="nx">stooge</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+<span class="p">}</span>
+
+<span class="nx">MYAPP</span><span class="p">.</span><span class="nx">flight</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>下一章将使用闭包来进行信息隐藏，是另一种有效减少全局污染的方法。</p>
+
+<h2 id="函数-1">函数</h2>
+
+<h3 id="函数对象">函数对象</h3>
+
+<p>JavaScript 中的函数就是对象。函数对象连接到<code class="highlighter-rouge">Function.prototype</code>（该原型对象本身连接到<code class="highlighter-rouge">Object.prototype</code>）。每个函数对象在创建时会附加两个隐藏属性：函数的上下文和实现函数行为的代码。</p>
+
+<p>函数对象在创建时也随配有一个<code class="highlighter-rouge">prototype</code>属性。它的值是一个拥有<code class="highlighter-rouge">constructor</code>属性且值即为该函数对象。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="http://ww1.sinaimg.cn/large/7011d6cfjw1f4lrei2b3pj208f06et95.jpg" alt="" /></p>
+
+<p>因为函数是对象，所以可以像任何其他的值一样被使用。函数可以保存在变量、对象和数组中。函数可以被当做参数传递给其他函数，函数也可以再返回函数。函数也可以拥有方法。</p>
+
+<p>函数的与众不同之处在于可以被调用。</p>
+
+<h3 id="函数字面量">函数字面量</h3>
+
+<p>函数对象通过函数字面量来创建。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>函数字面量包含4部分，分别是：保留字 function、函数名、参数、花括号中的语句。</p>
+
+<h3 id="调用">调用</h3>
+
+<p>调用一个函数会暂停当前函数的执行，传递控制权和参数给新函数。除了声明时定义的形式参数，还有两个附加参数：<code class="highlighter-rouge">this</code>和<code class="highlighter-rouge">arguments</code>。参数<code class="highlighter-rouge">this</code>在面向对象编程中非常重要，它的值取决于调用的模式。JavaScript中一共有4中调用模式：方法调用模式、函数调用模式、构造器调用模式、apply调用模式。</p>
+
+<p>实参和形参个数不匹配时，不会有运行时错误。实参过多时，超出的实参被忽略。形参过多时，缺失的值被替换为<code class="highlighter-rouge">undefined</code>。</p>
+
+<p>下面的内容也可以参考我以前的博文 <a href="http://gaohaoyang.github.io/2015/06/12/JavaScript-this/">JavaScript 中的 this</a></p>
+
+<h4 id="方法调用模式">方法调用模式</h4>
+
+<p>当一个函数被保存为对象的一个属性时，我们称它为一个方法。当一个方法被调用时，<code class="highlighter-rouge">this</code>被绑定到该对象。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myObject</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">value</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="na">increment</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">inc</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">+=</span> <span class="k">typeof</span> <span class="nx">inc</span> <span class="o">===</span> <span class="s1">'number'</span> <span class="p">?</span> <span class="nx">inc</span> <span class="p">:</span> <span class="mi">1</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">myObject</span><span class="p">.</span><span class="nx">increment</span><span class="p">()</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myObject</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="c1">//1</span>
+
+<span class="nx">myObject</span><span class="p">.</span><span class="nx">increment</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myObject</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="c1">//4</span>
+</code></pre></div></div>
+
+<h4 id="函数调用模式">函数调用模式</h4>
+
+<p>当一个函数并非一个对象的属性时，那么它就是被当做一个函数来调用的。</p>
+
+<p>此时<code class="highlighter-rouge">this</code>被绑定到全局对象。即时是内部函数也会将<code class="highlighter-rouge">this</code>绑定到全局对象。</p>
+
+<p>可以在函数内创建一个属性并赋值为<code class="highlighter-rouge">this</code>来解决这个问题。如下：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+<span class="p">}</span>
+
+<span class="nx">myObject</span><span class="p">.</span><span class="kr">double</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">that</span> <span class="o">=</span> <span class="k">this</span>
+    <span class="kd">var</span> <span class="nx">helper</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">that</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">add</span><span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="nx">that</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">helper</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="nx">myObject</span><span class="p">.</span><span class="kr">double</span><span class="p">()</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myObject</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="c1">//8</span>
+</code></pre></div></div>
+
+<h4 id="构造器调用模式">构造器调用模式</h4>
+
+<p>JavaScript是一门基于原型继承的语言。对象可以直接从其他对象继承属性。该语言是无类型的。</p>
+
+<p>如果在一个函数前面带上<code class="highlighter-rouge">new</code>来调用，那么背地里将会创建一个连接到该函数的<code class="highlighter-rouge">prototype</code>成员的新对象，同时<code class="highlighter-rouge">this</code>会被绑定到那个新对象上。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//创建构造器函数</span>
+<span class="kd">var</span> <span class="nx">Quo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">string</span>
+<span class="p">}</span>
+
+<span class="c1">//给Que的所有实例提供一个公共方法</span>
+<span class="nx">Quo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getStatus</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">status</span>
+<span class="p">}</span>
+
+<span class="c1">//实例化</span>
+<span class="kd">var</span> <span class="nx">myQuo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quo</span><span class="p">(</span><span class="s1">'confused'</span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myQuo</span><span class="p">.</span><span class="nx">getStatus</span><span class="p">())</span> <span class="c1">//confused</span>
+</code></pre></div></div>
+
+<p>书中不推荐这种形式的构造器函数，下一章有更好的解决方案。</p>
+
+<h4 id="apply-调用模式">Apply 调用模式</h4>
+
+<p><code class="highlighter-rouge">apply</code>方法让我们构建一个参数数组传递给调用函数。他也允许我们选择<code class="highlighter-rouge">this</code>的值。<code class="highlighter-rouge">apply</code>方法接受两个参数，第一个是要绑定给<code class="highlighter-rouge">this</code>的值，第二个是参数数组。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">add</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">arr</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">)</span> <span class="c1">//7</span>
+
+<span class="kd">var</span> <span class="nx">statusObject</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">status</span><span class="p">:</span> <span class="s1">'hello'</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">status</span> <span class="o">=</span> <span class="nx">Quo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getStatus</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">statusObject</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">status</span><span class="p">)</span> <span class="c1">//hello</span>
+</code></pre></div></div>
+
+<h3 id="参数">参数</h3>
+
+<p>当函数被调用时，会得到一个<code class="highlighter-rouge">arguments</code>数组。通过此参数可以访问所有它被调用时传递给它的参数列表，包括那些没有被分配给函数声明时定义的形参的多余参数。这使得编写一个无须指定参数个数的函数成为可能。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="kr">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">sum</span> <span class="o">+=</span> <span class="kr">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">sum</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span> <span class="c1">//45</span>
+</code></pre></div></div>
+
+<p>因语言的设计错误，<code class="highlighter-rouge">arguments</code>并不是一个真正的数组。是一个“类似数组”的对象。有<code class="highlighter-rouge">length</code>属性，但没有任何数组的方法。</p>
+
+<h3 id="返回">返回</h3>
+
+<p>函数执行时遇到关闭函数体的<code class="highlighter-rouge">}</code>时结束。然后把控制权交还给调用该函数的程序。</p>
+
+<p><code class="highlighter-rouge">return</code>可以使函数提前返回，不在执行余下的语句。</p>
+
+<p>函数总是会返回一个值，若没有指定，则返回<code class="highlighter-rouge">undefined</code>。</p>
+
+<p>若函数调用时在前面加上了<code class="highlighter-rouge">new</code>前缀，且返回值不是一个对象的时候，则返回<code class="highlighter-rouge">this</code>（该新对象）。</p>
+
+<h3 id="异常">异常</h3>
+
+<p>异常是干扰程序的正常流畅的不寻常的事故。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">add2</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">a</span> <span class="o">!==</span> <span class="s1">'number'</span> <span class="o">||</span> <span class="k">typeof</span> <span class="nx">b</span> <span class="o">!==</span> <span class="s1">'number'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="p">{</span>
+            <span class="na">name</span><span class="p">:</span> <span class="s1">'TypeError'</span><span class="p">,</span>
+            <span class="na">message</span><span class="p">:</span> <span class="s1">'add needs numbers'</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add2</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1">//5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add2</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p><img src="http://ww1.sinaimg.cn/large/7011d6cfjw1f4mprafcvhj20ml00xjrj.jpg" alt="" /></p>
+
+<p><code class="highlighter-rouge">throw</code>语句中断函数的执行。抛出一个<code class="highlighter-rouge">exception</code>对象，该对象包含一个用来识别异常类型的<code class="highlighter-rouge">name</code>属性和一个描述性的<code class="highlighter-rouge">message</code>属性。也可以自定义其他属性。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">try_it</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="nx">add2</span><span class="p">(</span><span class="s1">'a'</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">': '</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">try_it</span><span class="p">()</span> <span class="c1">//TypeError: add needs numbers</span>
+</code></pre></div></div>
+
+<p>如果在<code class="highlighter-rouge">try</code>代码块内抛出一个异常，控制权就会跳转到它的<code class="highlighter-rouge">catch</code>语句中。</p>
+
+<h3 id="扩充类型的功能">扩充类型的功能</h3>
+
+<p>JavaScript 允许给语言的基本类型扩充功能。通过<code class="highlighter-rouge">Object.prototype</code>添加方法，可以让该方法对所有对象都适用。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 先添加方法使得该方法对所有函数可用</span>
+<span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">method</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">func</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">prototype</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="nx">func</span>
+    <span class="k">return</span> <span class="k">this</span>
+<span class="p">}</span>
+
+<span class="c1">//添加一个取整方法</span>
+<span class="nb">Number</span><span class="p">.</span><span class="nx">method</span><span class="p">(</span><span class="s1">'integer'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">Math</span><span class="p">[</span><span class="k">this</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">?</span> <span class="s1">'ceil'</span> <span class="p">:</span> <span class="s1">'floor'</span><span class="p">](</span><span class="k">this</span><span class="p">)</span>
+<span class="p">})</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="o">-</span><span class="mi">10</span> <span class="o">/</span> <span class="mi">3</span><span class="p">).</span><span class="nx">integer</span><span class="p">())</span> <span class="c1">//-3</span>
+
+<span class="c1">//添加 trim()</span>
+<span class="nb">String</span><span class="p">.</span><span class="nx">method</span><span class="p">(</span><span class="s1">'trim'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^</span><span class="se">\s</span><span class="sr">+|</span><span class="se">\s</span><span class="sr">+$/g</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="p">})</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'  hello alibaba  '</span><span class="p">.</span><span class="nx">trim</span><span class="p">())</span> <span class="c1">//hello alibaba</span>
+</code></pre></div></div>
+
+<p>JavaScript 原型继承是动态的，因此新的方法立刻被赋予到所有的对象实例上，即使对象实例是在方法被增加之前就创建好了。</p>
+
+<h3 id="递归">递归</h3>
+
+<p>递归函数就是会直接或者间接地调用自身的一种函数。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">walkTheDom</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">walk</span><span class="p">(</span><span class="nx">node</span><span class="p">,</span> <span class="nx">func</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">func</span><span class="p">(</span><span class="nx">node</span><span class="p">)</span>
+    <span class="nx">node</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">firstChild</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nx">node</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">walk</span><span class="p">(</span><span class="nx">node</span><span class="p">,</span> <span class="nx">func</span><span class="p">)</span>
+        <span class="nx">node</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">nextSibling</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">getElementsByAttribute</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">att</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="nx">walkTheDom</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">node</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">actual</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">nodeType</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">node</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="nx">att</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">actual</span> <span class="o">===</span> <span class="s1">'string'</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">actual</span> <span class="o">===</span> <span class="nx">value</span> <span class="o">||</span> <span class="k">typeof</span> <span class="nx">value</span> <span class="o">!==</span> <span class="s1">'string'</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nx">results</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">node</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+    <span class="k">return</span> <span class="nx">results</span>
+<span class="p">}</span>
+
+<span class="c1">//在知乎主页上操作</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getElementsByAttribute</span><span class="p">(</span><span class="s1">'data-za-module'</span><span class="p">,</span> <span class="s1">'AnswerItem'</span><span class="p">))</span>
+<span class="c1">//得到下列数据</span>
+<span class="c1">//[div.feed-content, div.feed-content, div.feed-content, div.feed-content, div.feed-content, div.feed-content, div.feed-content]</span>
+</code></pre></div></div>
+
+<h3 id="作用域">作用域</h3>
+
+<p>作用域控制着变量与参数的可见性及生命周期。它减少了名称冲突，并提供了自动内存管理。</p>
+
+<p>无块级作用域。</p>
+
+<p>有函数作用域。</p>
+
+<p>建议在函数体的顶部声明函数中可能用到的所有变量。</p>
+
+<h3 id="闭包">闭包</h3>
+
+<p>作用域的好处是内部函数可以访问定义他们的外部函数的参数和变量（除了<code class="highlighter-rouge">this</code>和<code class="highlighter-rouge">arguments</code>）。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">quo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">get_status</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">status</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">myQuo</span> <span class="o">=</span> <span class="nx">quo</span><span class="p">(</span><span class="s1">'amazed'</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myQuo</span><span class="p">.</span><span class="nx">get_status</span><span class="p">())</span> <span class="c1">//amazed</span>
+</code></pre></div></div>
+<p>狭义的说，返回的那个对象即闭包，它里面的方法可以访问它被创建时所处的上下文环境。</p>
+
+<p>避免在循环中创建函数，容易引起混淆。可以现在循环之外创建一个辅助函数，让辅助函数在返回一个绑定了当前<code class="highlighter-rouge">i</code>值的函数，这样就不会导致混淆了。</p>
+
+<h3 id="回调">回调</h3>
+
+<p>将一个函数作为参数，一旦接收到响应，再调用这个函数。</p>
+
+<h3 id="模块">模块</h3>
+
+<p>可以用函数和闭包构造模块。</p>
+
+<p>模块模式的一般形式是：一个定义了私有变量和函数的函数；利用闭包创建可以访问私有变量和函数的特权函数；最后返回这个特权函数，或者把他们保存到一个可访问到的地方。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">numberCal</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">half</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">n</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="p">}</span>
+    <span class="kd">var</span> <span class="kr">double</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">n</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="p">}</span>
+    <span class="kd">var</span> <span class="nx">tribble</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">n</span> <span class="o">*</span> <span class="mi">3</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">half</span><span class="p">:</span> <span class="nx">half</span><span class="p">,</span>
+        <span class="na">double</span><span class="p">:</span> <span class="kr">double</span><span class="p">,</span>
+        <span class="na">tribble</span><span class="p">:</span> <span class="nx">tribble</span>
+    <span class="p">}</span>
+<span class="p">}())</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numberCal</span><span class="p">.</span><span class="nx">half</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c1">//2.5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numberCal</span><span class="p">.</span><span class="nx">half</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span> <span class="c1">//3</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numberCal</span><span class="p">.</span><span class="kr">double</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span> <span class="c1">//14</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numberCal</span><span class="p">.</span><span class="nx">tribble</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span> <span class="c1">//21</span>
+</code></pre></div></div>
+
+<h3 id="级联">级联</h3>
+
+<p>如果让方法返回<code class="highlighter-rouge">this</code>而不是默认的<code class="highlighter-rouge">undefined</code>，就可以启用级联，即连续调用。</p>
+
+<h3 id="柯里化">柯里化</h3>
+
+<p>柯里化允许我们把函数与传递给它的参数相结合，产生出一个新的函数。</p>
+
+<p>详情见以前的博文 <a href="http://gaohaoyang.github.io/2015/06/11/JavaScript-function/#bind--currying">JavaScript 函数 -bind 与 currying</a>。</p>
+
+<h3 id="记忆">记忆</h3>
+
+<p>函数可以将先前操作的结果记录在某个对象里，从而避免无谓的重复运算。这种优化被称为记忆（memoization）。</p>
+
+  </section>
+</article>
+
+
+<hr><br/><br/>
+<!--section>
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</section>-->
+
+
+
+<!--  css & js -->
+<link rel="stylesheet" href="/share-dist/css/share.min.css">
+
+<script src="/public/js/social-share.min.js"></script>
+
+<div class="share-component" data-mobile-sites="weibo,qq,qzone,tencent">
+
+
+</div>
+
+<br>
+
+<!--<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js"></script>
+    <title>打赏</title>
+    <style type="text/css">
+        .content{width:80%;margin:10px auto;}
+                .hide_box{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+        .shang_box{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+        .shang_box img{border:none;border-width:0;}
+        .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+        .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+        .shang_close{float:right;display:inline-block;}
+                .shang_logo{display:block;text-align:center;margin:20px auto;}
+        .shang_tit{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/dsimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+        .shang_tit p{color:#a3a3a3;text-align:center;font-size:16px;}
+        .shang_payimg{width:140px;padding:10px;border:6px solid #EA5F00;margin:0 auto;border-radius:3px;height:140px;}
+        .shang_payimg img{display:block;text-align:center;width:140px;height:140px; }
+        .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+        .radiobox{width: 16px;height: 16px;background: url('/dsimg/radio2.jpg');display: block;float: left;margin-top: 5px;margin-right: 14px;}
+        .checked .radiobox{background:url('/dsimg/radio1.jpg');}
+        .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:280px;}
+        .shang_payselect .pay_item{display:inline-block;margin-right:10px;float:left;}
+        .shang_info{clear:both;}
+		.shang_info p,.shang_info a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+    </style>
+</head>
+
+<body>
+    <div class="content">
+    <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">打赏</a></p>
+    <div class="hide_box"></div>
+    <div class="shang_box">
+    	<a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="/dsimg/close.jpg" alt="取消" /></a>
+        <img class="shang_logo" src="/dsimg/logos.png" alt="亢志军" />
+    	<div class="shang_tit">
+    		<p>感谢您的支持，我会继续努力的!</p>
+    	</div>
+    	<div class="shang_payimg">
+    		<img src="/public/images/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+    	</div>
+    		<div class="pay_explain">扫码打赏，你说多少就多少</div>
+    	<div class="shang_payselect">
+    		<div class="pay_item checked" data-id="alipay">
+	    		<span class="radiobox"></span>
+	    		<span class="pay_logo"><img src="/dsimg/alipay.jpg" alt="支付宝" /></span>
+    		</div>
+    		<div class="pay_item" data-id="weipay">
+	    		<span class="radiobox"></span>
+	    		<span class="pay_logo"><img src="/dsimg/wechat.jpg" alt="微信" /></span>
+    		</div>
+    	</div>
+    	<div class="shang_info">
+    		<p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+    		<p>Powered by <a href="robotkang.cc" target="_blank" title="亢志军">亢志军</a>，分享从这里开始，精彩与您同在</p>
+    	</div>
+    </div>
+    </div>
+    <script type="text/javascript">
+    $(function(){
+    	$(".pay_item").click(function(){
+    		$(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+    		var dataid=$(this).attr('data-id');
+    		$(".shang_payimg img").attr("src","/dsimg/"+dataid+"img.jpg");
+    		$("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+    	});
+    });
+    function dashangToggle(){
+    	$(".hide_box").fadeToggle();
+    	$(".shang_box").fadeToggle();
+    }
+    </script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>R</title>
+<link  href="/public/css/myreward.css" rel="stylesheet"  type="text/css">
+</head>
+<body>
+
+<div class="reward">
+	<div class="reward-button">赏 <span class="reward-code">
+		<span class="alipay-code"> <img class="alipay-img wdp-appear" src="/public/images/alipayimg.jpg"><b>支付宝打赏</b> </span>
+		<span class="wechat-code"> <img class="wechat-img wdp-appear" src="/public/images/weipayimg.jpg"><b>微信打赏</b> </span> </span>
+	</div>
+	<p class="reward-notice">如果文章对你有帮助，欢迎点击上方按钮打赏作者</a></p>
+</div>
+</body>
+</html>
+
+<section>
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2016/05/regular-expression-group/" data-toggle="tooltip" data-placement="top" title="浅谈正则表达式中的分组和引用">上一篇：  <span>浅谈正则表达式中的分组和引用</span>
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2016/06/JavaScript-good-parts-note2/" data-toggle="tooltip" data-placement="top" title="JavaScript 语言精粹笔记2-继承、数组、正则表达式">下一篇：  <span>JavaScript 语言精粹笔记2-继承、数组、正则表达式</span>
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+
+
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Valine - A simple comment system based on Leancloud.</title>
+    <!--Leancloud 操作库:-->
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!--Valine 的核心代码库:-->
+    <script src="/public/js/Valine.min.js"></script>
+
+
+</head>
+
+
+<a href="http://p.comworld.club/?u=44" target="_blank"><img src="https://robotkang-1257995526.cos.ap-chengdu.myqcloud.com/banner.jpg" width="100%" height="auto" alt="photos" display="block"/></a>
+<p>
+<p>
+    
+   <div class="comment"></div>
+    
+    <script>
+        new Valine({
+            // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+            av: AV, 
+            el: '.comment', // 
+            app_id: '5z3QHKTEMlSqxReRnfeFG1cC-gzGzoHsz', // 这里填写上面得到的APP ID
+            app_key: '59CrEdy9yw1xmqcDQ4JcJbWy', // 这里填写上面得到的APP KEY
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!', // [v1.0.7 new]留言框占位提示文字
+            avatar:'wavatar',
+            path:window.location.pathname,
+            guest_info:['nick','mail','link'] ,
+            pageSize:10,
+        });
+    </script>
+
+	
+
+<!--div id="plus"></div>
+<script src="https://qingqing.com/static/js/plus.js"></script-->
+
+
+
+
+<link href="/public/css/top.css/" rel="stylesheet" type="text/css" />
+<script src="/public/js/jquery.js?v=1.83.min/" type="text/javascript"></script>
+<script src="/public/js/top.js/"></script>
+<div style="display: none;" id="rocket-to-top">
+<div style="opacity:0;display: block;" class="level-2"></div>
+<div class="level-3"></div>
+
+
+
+
+
+            
+    <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Weibo -->
+          <li class="navigation__item_social">
+            <a href="http://weibo.com/522678560" title="@522678560 的微博" target="_blank">
+              <i class='social fa fa-weibo fa-2x'></i>
+              <span class="label">Weibo</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/rekeryang" title="@rekeryang 的 Github" target="_blank">
+              <i class='social fa fa-github fa-2x'></i>
+              <span class="label">Github</span>
+            </a>
+          </li>
+          
+          
+          
+
+          
+
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <i class='social fa fa-rss fa-2x'></i>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:3806165@qq.com" title="Contact me">
+              <i class='social fa fa-envelope fa-2x'></i>
+              <span class="label">Email</span>
+            </a>
+          </li>
+          
+
+          </ul>
+        </nav>
+
+        </div>
+
+
+
+        <div class = "footer_div">  
+           <p class="copyright text-muted">
+            Copyright &copy; 睿客杨一帆 2017-2019 Theme by <a href="http://robotkang.cc/">robotkang</a>|
+            <iframe
+                style="margin-left: 2px; margin-bottom:-5px;"
+                frameborder="0" scrolling="0" width="91px" height="20px"
+                src="https://ghbtns.com/github-btn.html?user=MengZheK&repo=kangblog.github.io&type=star&count=true" >
+            </iframe>|
+            
+<!-- cnzz -->
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261874359'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1261874359%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>|
+
+
+<!-- cc -->
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/cn/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/3.0/cn/80x15.png" /></a>
+
+
+</p>        	
+
+
+<!-- 访问统计 -->
+
+<div align="right">
+    			
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+ 
+      Total <span id="busuanzi_value_site_pv"></span> views.
+您是我的第<span id="busuanzi_value_site_uv"></span> 个访客..
+<span id="busuanzi_value_page_pv"></span> Hits
+  
+          </span>
+        </div>
+        <div>
+    </footer>
+</section>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+
+
+
+        </div>
+    
+
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/public/js/main.js"></script>
+
+<script type="text/javascript" src="/public/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    
+<!--小人只在首页显示 start*-->
+<div id="spig" class="spig">
+    <div id="message">正在加载中……</div>
+    <div id="mumu" class="mumu"></div>
+</div>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="/public/js/jquery.xiaoren.js"></script>
+<script type="text/javascript" src="/public/js/spig.js"></script>
+<link rel="stylesheet" href="/public/css/xiaoren.css" type="text/css"/>
+<script type="text/javascript">
+var isindex = true;
+var visitor = true;
+</script>
+
+
+<!--博客鼠标点击显示文字JS特效代码 -->
+
+<script type="text/javascript">
+
+var a_idx = 0;
+jQuery(document).ready(function($) {
+ $("body").click(function(e) {
+ var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善");
+ var $i = $("<span/>").text(a[a_idx]);
+ a_idx = (a_idx + 1) % a.length;
+ var x = e.pageX,
+ y = e.pageY;
+ $i.css({
+ "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+ "top": y - 20,
+ "left": x,
+ "position": "absolute",
+ "font-weight": "bold",
+ "color": "#ff6651"
+ });
+ $("body").append($i);
+ $i.animate({
+ "top": y - 180,
+ "opacity": 0
+ },
+ 1500,
+ function() {
+ $i.remove();
+ });
+ });
+});
+</script>
+
+</body>
+
+</html>

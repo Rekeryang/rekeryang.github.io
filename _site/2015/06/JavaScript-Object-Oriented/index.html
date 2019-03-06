@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+  <title>JavaScript 面向对象</title>
+  <meta name="description" content="">
+  <meta name="author" content="robotkang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="JavaScript 面向对象">
+  <meta name="twitter:description" content="">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="JavaScript 面向对象">
+  <meta property="og:description" content="">
+  
+  <link rel="icon" type="image/png" href="/public/images/favicon.png" />
+  <link href="/public/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/public/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2015/06/JavaScript-Object-Oriented/">
+  <link rel="alternate" type="application/rss+xml" title="睿客杨一帆" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+
+
+<script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=2854006074878156134' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();</script>
+
+
+<!-- 百度统计 -->
+  
+
+<!-- google 统计 -->
+  
+
+<!-- Valine Comment -->
+    
+</head>
+
+
+  <body style="height:1000px;">
+
+   <meta name="baidu-site-verification" content="0L5MKMrHOb" />
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/liuyan" title="liuyan" class="btn-mobile-menu__icon">
+                      留言
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/ziyuan" title="ziyuan" class="btn-mobile-menu__icon">
+                      资源
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+
+
+    <header class="panel-cover panel-cover--collapsed">
+<style type="text/css">
+
+</style>
+
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">
+            <a href="/#blog" title="前往 睿客杨一帆 的主页" class="blog-button">
+                <div class="img"><img src="/public/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back">
+                        <h1>
+                            
+                                Rekeryang
+                            
+                        </h1>
+                        <p>
+                           
+                                移动互联网开发
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for 睿客杨一帆" class="blog-button">睿客杨一帆</a></h1>
+        
+        <hr class="panel-cover__divider" style="height:1px;border:none;border-top:1px solid #555555;"/>
+        <p class="panel-cover__description">欢迎来到我的个人博客~</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" style="height:1px;border:none;border-top:1px solid #555555;"/>
+
+        
+
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/liuyan" title="liuyan">留言</a></li>
+                
+                  <li class="navigation__item"><a href="/ziyuan" title="ziyuan">资源</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+    
+    <div class="panel-cover--overlay cover-disabled"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- latex公式支持代码 end -->
+
+<!-- 代码高亮设置 begin 
+<link rel="stylesheet" href="/css/pygments-default.css">
+ 代码高亮设置 end -->
+
+
+<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title">JavaScript 面向对象</h1>
+    <div class="post-meta" style="color:#C3C3C3;border-bottom-width: 1px;border-bottom-style: dashed;padding-bottom: 0px;padding-top: 5px;">
+      <img src="/public/images/calendar.png" width="20px"/> 
+      <time datetime="2015-06-15 22:06:05 +0800" itemprop="datePublished" class="post-meta__date date">2015-06-15</time>  
+         
+      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span></span>
+    </p>
+    </div>
+  </header>
+
+  <section class="post">
+
+    <ul id="markdown-toc">
+  <li><a href="#概念" id="markdown-toc-概念">概念</a></li>
+  <li><a href="#基于原型的继承" id="markdown-toc-基于原型的继承">基于原型的继承</a>    <ul>
+      <li><a href="#prototype-属性与原型" id="markdown-toc-prototype-属性与原型">prototype 属性与原型</a>        <ul>
+          <li><a href="#例" id="markdown-toc-例">例</a></li>
+        </ul>
+      </li>
+      <li><a href="#原型链" id="markdown-toc-原型链">原型链</a>        <ul>
+          <li><a href="#objectcreatenull--bindnull" id="markdown-toc-objectcreatenull--bindnull"><code class="highlighter-rouge">Object.create(null)</code> &amp; <code class="highlighter-rouge">.bind(null)</code></a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#prototype-属性" id="markdown-toc-prototype-属性">prototype 属性</a>    <ul>
+      <li><a href="#改变-prototype" id="markdown-toc-改变-prototype">改变 prototype</a></li>
+      <li><a href="#内置构造器的-prototype-属性" id="markdown-toc-内置构造器的-prototype-属性">内置构造器的 <code class="highlighter-rouge">prototype</code> 属性</a></li>
+      <li><a href="#创建对象-new原型链" id="markdown-toc-创建对象-new原型链">创建对象-new/原型链</a></li>
+    </ul>
+  </li>
+  <li><a href="#instanceof" id="markdown-toc-instanceof">instanceof</a></li>
+  <li><a href="#实现继承的方式" id="markdown-toc-实现继承的方式">实现继承的方式</a></li>
+  <li><a href="#模拟重载" id="markdown-toc-模拟重载">模拟重载</a></li>
+  <li><a href="#调用子类方法" id="markdown-toc-调用子类方法">调用子类方法</a></li>
+  <li><a href="#链式调用" id="markdown-toc-链式调用">链式调用</a></li>
+  <li><a href="#抽象类" id="markdown-toc-抽象类">抽象类</a></li>
+  <li><a href="#模块化" id="markdown-toc-模块化">模块化</a></li>
+</ul>
+
+<p>本文为慕课网 <a href="http://www.imooc.com/learn/277">JavaScript深入浅出</a>  JavaScript 面向对象笔记。</p>
+
+<h2 id="概念">概念</h2>
+
+<blockquote>
+  <p>面向对象程序设计（Object-oriented programming，OOP）是一种程序设计范型，同时也是一种程序开发的方法。对象指的是类的实例。它将对象作为程序的基本单元，将程序和数据封装其中，以提高软件的重用性、灵活性和扩展性。</p>
+
+  <p>——维基百科</p>
+</blockquote>
+
+<p>一般面向对象包含：继承，封装，多态，抽象</p>
+
+<hr />
+
+<h2 id="基于原型的继承">基于原型的继承</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function Foo() {
+    this.y = 2;
+}
+console.log(typeof Foo.prototype); //object
+
+Foo.prototype.x = 1;
+var obj3 = new Foo();
+
+console.log(obj3.y); //2
+console.log(obj3.x); //1
+</code></pre></div></div>
+
+<p>创建函数 <code class="highlighter-rouge">Foo</code> 的时候，就会有一个内置的 <code class="highlighter-rouge">Foo.prototype</code> 属性，并且这个属性是对象。</p>
+
+<p>在使用 <code class="highlighter-rouge">new Foo();</code> 创建对象实例时。<code class="highlighter-rouge">this</code> 会指向一个对象，并且这个对象的原型会指向 <code class="highlighter-rouge">Foo.prototype</code> 属性。<code class="highlighter-rouge">this.y = 2</code> 给这个对象赋值，并把这个对象返回。把这个对象赋值给 <code class="highlighter-rouge">obj3</code>。</p>
+
+<p><code class="highlighter-rouge">y</code> 是 <code class="highlighter-rouge">obj3</code> 上的，<code class="highlighter-rouge">x</code> 是 <code class="highlighter-rouge">obj3</code> 的原型 <code class="highlighter-rouge">Foo.prototype</code> 上的。</p>
+
+<p><img src="http://7q5cdt.com1.z0.glb.clouddn.com/blog-prototype.png" alt="prototype" /></p>
+
+<hr />
+
+<h3 id="prototype-属性与原型">prototype 属性与原型</h3>
+
+<p>prototype 是函数对象上预设的对象属性。</p>
+
+<p>原型是对象上的原型，通常是构造器的 prototype 属性。</p>
+
+<hr />
+
+<h4 id="例">例</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+Person.prototype.LEGS_NUM = 2;
+Person.prototype.ARMS_NUM = 2;
+
+Person.prototype.hi = function() {
+    console.log('Hi, my name is ' + this.name + ". I'm " + this.age + ' years old now');
+};
+
+Person.prototype.walking = function() {
+    console.log(this.name + ' is walking...');
+};
+
+function Student(name, age, className) {
+    Person.call(this, name, age); //使 Person 中的 this 指向 Student
+    this.className = className;
+}
+
+Student.prototype = Object.create(Person.prototype);
+Student.prototype.constructor = Student;
+
+Student.prototype.hi = function() {
+    console.log('Hi, my name is ' + this.name + ". I'm " + this.age + ' years old now, and from ' + this.className + ".");
+};
+
+Student.prototype.learn = function(subject) {
+    console.log(this.name + ' is learning ' + subject + ' at ' + this.className + '.');
+}
+
+//test
+var gao = new Student('Gao', '24', 'Class 3123');
+console.log(gao); // 这个对象的具体内容见下图
+gao.hi(); //Hi, my name is Gao. I'm 24 years old now, and from Class 3123.
+gao.LEGS_NUM; //2
+gao.walking(); //Gao is walking...
+gao.learn('JavaScript'); //Gao is learning JavaScript at Class 3123.
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">Object.create(arg)</code> 创建一个空对象，并且这个对象的原型指向参数 <code class="highlighter-rouge">arg</code>。</li>
+  <li><code class="highlighter-rouge">Student.prototype.constructor = Student</code> 为了保证一致性，否则 constructor 指向 Person。</li>
+</ul>
+
+<hr />
+
+<h3 id="原型链">原型链</h3>
+
+<p>gao 对象的原型链：</p>
+
+<p><img src="http://7q5cdt.com1.z0.glb.clouddn.com/blog-oop-gao.png" alt="Object" /></p>
+
+<p>下面通过图形展示原型链：</p>
+
+<p><img src="http://7q5cdt.com1.z0.glb.clouddn.com/blog-原型链.png" alt="原型链" /></p>
+
+<hr />
+
+<h4 id="objectcreatenull--bindnull"><code class="highlighter-rouge">Object.create(null)</code> &amp; <code class="highlighter-rouge">.bind(null)</code></h4>
+
+<p>这两种算是特例。</p>
+
+<p><code class="highlighter-rouge">Object.create(null)</code> 和 <code class="highlighter-rouge">.bind(null)</code> 这两种方式创建出来的对象是没有 <code class="highlighter-rouge">prototype</code> 属性的，为 <code class="highlighter-rouge">undefined</code>。</p>
+
+<hr />
+
+<h2 id="prototype-属性">prototype 属性</h2>
+
+<h3 id="改变-prototype">改变 prototype</h3>
+
+<p>JavaScript 中的 prototype 是对象，在运行的时候可以修改。</p>
+
+<p>给 prototype 添加或删除一些属性，是会影响到已经创建好的实例对象的。</p>
+
+<p>但是，直接修改 prototype 属性，是不会影响到已经创建好的实例对象的。但是会影响到新的实例对象。如下代码：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 上接上面的代码
+
+// 给 prototype 添加或删除一些属性
+Student.prototype.x = 101;
+console.log(gao.x); //101
+
+// 直接修改 prototype 属性
+Student.prototype = {
+    y: 2
+};
+
+// 不会影响到已创建好的实例对象
+console.log(gao.x); //101
+console.log(gao.y); //undefined
+
+// 会影响到新创建的实例对象
+var ying = new Student('Ying', 24, 'UI');
+console.log(ying.x); //undefined
+console.log(ying.y); //2
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="内置构造器的-prototype-属性">内置构造器的 <code class="highlighter-rouge">prototype</code> 属性</h3>
+
+<p>修改内置构造器的 <code class="highlighter-rouge">prototype</code> 属性后，在实例化这个对象后，枚举其属性时，会把修改的内置构造器的 <code class="highlighter-rouge">prototype</code> 属性也枚举出来，有时候这是要避免的。可用 <code class="highlighter-rouge">defineProperty</code> 方法解决。如下代码：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Object.prototype.x = 1;
+var obj = {};
+console.log(obj.x); //1
+console.log(obj);
+
+for (var k in obj) {
+    console.log('result---&gt;' + k);
+}
+// result---&gt;x
+</code></pre></div></div>
+
+<p>使用 <code class="highlighter-rouge">defineProperty</code> 后：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Object.defineProperty(Object.prototype, 'x', {
+    writable: true,
+    value: 1
+});
+var obj = {};
+console.log(obj.x);//1
+console.log(obj);
+for (var k in obj) {
+    console.log('result---&gt;' + k);
+}
+// nothing output here
+</code></pre></div></div>
+
+<p>其实也可以这样枚举，使用 <code class="highlighter-rouge">hasOwnProperty</code> 方法：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for (var key in obj) {
+    if (obj.hasOwnProperty(key)) {
+        console.log("result---&gt;" + key);
+    }
+}
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="创建对象-new原型链">创建对象-new/原型链</h3>
+
+<p><img src="http://7q5cdt.com1.z0.glb.clouddn.com/blog-new prototype.png" alt="prototype" /></p>
+
+<hr />
+
+<h2 id="instanceof">instanceof</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>console.log([1, 2] instanceof Array); //true
+console.log([1, 2] instanceof Object); //true
+console.log(new Object() instanceof Array); //false
+</code></pre></div></div>
+
+<p>左边要求是对象，右边要求是构造器或函数。它会判断：<strong>右边的构造器中的 <code class="highlighter-rouge">prototype</code> 属性是否出现在左边的对象的原型链上。</strong></p>
+
+<ul>
+  <li><strong>注意：</strong>不同的 window 或 iframe 间的对象类型检测<strong>不能</strong>使用 <code class="highlighter-rouge">instanceof</code>！</li>
+</ul>
+
+<hr />
+
+<h2 id="实现继承的方式">实现继承的方式</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function Person() {}
+
+function Student() {}
+
+Student.prototype = Person.prototype; //1
+
+Student.prototype = new Person(); //2
+
+Student.prototype = Object.create(Person.prototype); //3
+
+Student.prototype.constructor = Student;
+</code></pre></div></div>
+
+<p>注释中：</p>
+
+<p>1 是错误的。如果改变了 Student 就会改变 Person</p>
+
+<p>2 可以实现继承，但是其调用了构造函数，若父类构造函数中有形参，那么传值就会比较奇怪。</p>
+
+<p>3 是最好的方法。创建了一个空对象，并且对象的原型指向参数 Person.prototype。这样便实现了继承。同时原型链写，不向上查找。但是 <code class="highlighter-rouge">Object.create</code> 是ES5 中的方法，所以可以使用下列代码做兼容：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!Object.create) {
+    Object.create = function(proto) {
+        function F() {}
+        F.prototype = proto;
+        return new F;
+    };
+}
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="模拟重载">模拟重载</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function Person() {
+    var args = arguments;
+    if (typeof args[0] === 'object' &amp;&amp; args[0]) {
+        if (args[0].name) {
+            this.name = args[0].name;
+        }
+        if(args[0].age){
+            this.age = args[0].age;
+        }
+    } else {
+        if (args[0]) {
+            this.name = args[0];
+        }
+        if (args[1]) {
+            this.age = args[1];
+        }
+    }
+}
+
+//重写 toString 方法
+Person.prototype.toString = function() {
+    console.log('name='+this.name+', age='+this.age);
+};
+
+var gao = new Person({name:'Gao',age:24});
+gao.toString(); // name=Gao, age=24
+
+var ying = new Person('Ying',25);
+ying.toString(); // name=Ying, age=25
+</code></pre></div></div>
+
+<p>对参数进行判断，模拟实现重载。</p>
+
+<hr />
+
+<h2 id="调用子类方法">调用子类方法</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function Person(name) {
+    this.name = name;
+}
+
+function Student(name, className) {
+    this.className = className;
+    Person.call(this, name); // 调用基类的构造器
+}
+
+var gao = new Student('Gao', '3123');
+console.log(gao); // Student {className: "3123", name: "Gao"}
+
+Person.prototype.init = function() {};
+
+Student.prototype.init = function() {
+    // do sth...
+    Person.prototype.init.apply(this, arguments); // 同时也想调用父类被覆盖的方法
+};
+</code></pre></div></div>
+
+<p>主要是两种：调用父类的构造器，调用原型链上父类被覆盖的方法。</p>
+
+<hr />
+
+<h2 id="链式调用">链式调用</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function ClassManager() {}
+ClassManager.prototype.addClass = function(str) {
+    console.log('Class: ' + str + ' added');
+    return this;
+};
+
+var manager = new ClassManager();
+manager.addClass('classA').addClass('classB').addClass('classC');
+// Class: classA added
+// Class: classB added
+// Class: classC added
+</code></pre></div></div>
+
+<p>重点在于 return this。返回这个 ClassManager 的实例。这样这个实例又可以继续调用方法。</p>
+
+<hr />
+
+<h2 id="抽象类">抽象类</h2>
+
+<p>在构造器中 <code class="highlighter-rouge">throw new Error('');</code> 抛异常。这样防止这个类被直接调用。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function DetectorBase() {
+    throw new Error('Abstract class can not be invoked directly!');
+}
+
+DetectorBase.detect = function() {
+    console.log('Detection starting...');
+}
+DetectorBase.stop = function() {
+    console.log('Detection stopped.');
+};
+DetectorBase.init = function() {
+    throw new Error('Error');
+}
+
+var d = new DetectorBase();// Uncaught Error: Abstract class can not be invoked directly!
+
+function LinkDetector() {}
+LinkDetector.prototype = Object.create(DetectorBase.prototype);
+LinkDetector.prototype.constructor = LinkDetector;
+
+var l = new LinkDetector();
+console.log(l); //LinkDetector {}__proto__: LinkDetector
+l.detect(); //Uncaught TypeError: l.detect is not a function
+l.init(); //Uncaught TypeError: l.init is not a function
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">var d = new DetectorBase();</code> 是不能实例化的，会报错</p>
+
+<p><code class="highlighter-rouge">l.detect();</code> 但是这个为什么报错我就不知道了。</p>
+
+<p>已经在原课程下提问了，期待老师的讲解。 <a href="http://www.imooc.com/qadetail/82732">抽象类中子类为什么不能调用父类的非抽象方法？</a></p>
+
+<p>问题已经解决了，应该是老师当时的课件写错了，应该再基类中将这两个方法写在其原型 prototype 上。如下：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function DetectorBase() {
+    throw new Error('Abstract class can not be invoked directly!');
+}
+
+DetectorBase.prototype.detect = function() {
+    console.log('Detection starting...');
+};
+DetectorBase.prototype.stop = function() {
+    console.log('Detection stopped.');
+};
+DetectorBase.prototype.init = function() {
+    throw new Error('Error');
+};
+
+// var d = new DetectorBase();// Uncaught Error: Abstract class can not be invoked directly!
+
+function LinkDetector() {}
+LinkDetector.prototype = Object.create(DetectorBase.prototype);
+LinkDetector.prototype.constructor = LinkDetector;
+
+var l = new LinkDetector();
+console.log(l); //LinkDetector {}__proto__: LinkDetector
+l.detect(); //Detection starting...
+l.init(); //Uncaught Error: Error
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="模块化">模块化</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var moduleA;
+moduleA = function() {
+    var prop = 1;
+
+    function func() {}
+
+    return {
+        func: func,
+        prop: prop
+    };
+}(); // 立即执行匿名函数
+</code></pre></div></div>
+
+<p>prop，func 不会被泄露到全局作用域。</p>
+
+<p>或者另一种写法，使用 new</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>moduleA = new function() {
+    var prop = 1;
+
+    function func() {}
+
+    this.func = func;
+    this.prop = prop;
+}
+</code></pre></div></div>
+
+<p>更复杂的可以使用 Sea.js Kissy Require.js 模块化工具。</p>
+
+<hr />
+
+<p>最后补充一点设计模式相关的资料，我还没有来得及看的：</p>
+
+<ul>
+  <li><a href="http://www.oschina.net/translate/learning-javascript-design-patterns">学用 JavaScript 设计模式</a></li>
+  <li><a href="http://blog.jobbole.com/29454/">常用的Javascript设计模式</a></li>
+  <li><a href="http://developer.51cto.com/art/201109/288650_all.htm">JavaScript设计模式深入分析</a></li>
+</ul>
+
+  </section>
+</article>
+
+
+<hr><br/><br/>
+<!--section>
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</section>-->
+
+
+
+<!--  css & js -->
+<link rel="stylesheet" href="/share-dist/css/share.min.css">
+
+<script src="/public/js/social-share.min.js"></script>
+
+<div class="share-component" data-mobile-sites="weibo,qq,qzone,tencent">
+
+
+</div>
+
+<br>
+
+<!--<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js"></script>
+    <title>打赏</title>
+    <style type="text/css">
+        .content{width:80%;margin:10px auto;}
+                .hide_box{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+        .shang_box{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+        .shang_box img{border:none;border-width:0;}
+        .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+        .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+        .shang_close{float:right;display:inline-block;}
+                .shang_logo{display:block;text-align:center;margin:20px auto;}
+        .shang_tit{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/dsimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+        .shang_tit p{color:#a3a3a3;text-align:center;font-size:16px;}
+        .shang_payimg{width:140px;padding:10px;border:6px solid #EA5F00;margin:0 auto;border-radius:3px;height:140px;}
+        .shang_payimg img{display:block;text-align:center;width:140px;height:140px; }
+        .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+        .radiobox{width: 16px;height: 16px;background: url('/dsimg/radio2.jpg');display: block;float: left;margin-top: 5px;margin-right: 14px;}
+        .checked .radiobox{background:url('/dsimg/radio1.jpg');}
+        .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:280px;}
+        .shang_payselect .pay_item{display:inline-block;margin-right:10px;float:left;}
+        .shang_info{clear:both;}
+		.shang_info p,.shang_info a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+    </style>
+</head>
+
+<body>
+    <div class="content">
+    <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">打赏</a></p>
+    <div class="hide_box"></div>
+    <div class="shang_box">
+    	<a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="/dsimg/close.jpg" alt="取消" /></a>
+        <img class="shang_logo" src="/dsimg/logos.png" alt="亢志军" />
+    	<div class="shang_tit">
+    		<p>感谢您的支持，我会继续努力的!</p>
+    	</div>
+    	<div class="shang_payimg">
+    		<img src="/public/images/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+    	</div>
+    		<div class="pay_explain">扫码打赏，你说多少就多少</div>
+    	<div class="shang_payselect">
+    		<div class="pay_item checked" data-id="alipay">
+	    		<span class="radiobox"></span>
+	    		<span class="pay_logo"><img src="/dsimg/alipay.jpg" alt="支付宝" /></span>
+    		</div>
+    		<div class="pay_item" data-id="weipay">
+	    		<span class="radiobox"></span>
+	    		<span class="pay_logo"><img src="/dsimg/wechat.jpg" alt="微信" /></span>
+    		</div>
+    	</div>
+    	<div class="shang_info">
+    		<p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+    		<p>Powered by <a href="robotkang.cc" target="_blank" title="亢志军">亢志军</a>，分享从这里开始，精彩与您同在</p>
+    	</div>
+    </div>
+    </div>
+    <script type="text/javascript">
+    $(function(){
+    	$(".pay_item").click(function(){
+    		$(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+    		var dataid=$(this).attr('data-id');
+    		$(".shang_payimg img").attr("src","/dsimg/"+dataid+"img.jpg");
+    		$("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+    	});
+    });
+    function dashangToggle(){
+    	$(".hide_box").fadeToggle();
+    	$(".shang_box").fadeToggle();
+    }
+    </script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>R</title>
+<link  href="/public/css/myreward.css" rel="stylesheet"  type="text/css">
+</head>
+<body>
+
+<div class="reward">
+	<div class="reward-button">赏 <span class="reward-code">
+		<span class="alipay-code"> <img class="alipay-img wdp-appear" src="/public/images/alipayimg.jpg"><b>支付宝打赏</b> </span>
+		<span class="wechat-code"> <img class="wechat-img wdp-appear" src="/public/images/weipayimg.jpg"><b>微信打赏</b> </span> </span>
+	</div>
+	<p class="reward-notice">如果文章对你有帮助，欢迎点击上方按钮打赏作者</a></p>
+</div>
+</body>
+</html>
+
+<section>
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2015/06/JavaScript-closure/" data-toggle="tooltip" data-placement="top" title="JavaScript 中的闭包">上一篇：  <span>JavaScript 中的闭包</span>
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2015/06/web-app/" data-toggle="tooltip" data-placement="top" title="Web App 相关技术">下一篇：  <span>Web App 相关技术</span>
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+
+
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Valine - A simple comment system based on Leancloud.</title>
+    <!--Leancloud 操作库:-->
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!--Valine 的核心代码库:-->
+    <script src="/public/js/Valine.min.js"></script>
+
+
+</head>
+
+
+<a href="http://p.comworld.club/?u=44" target="_blank"><img src="https://robotkang-1257995526.cos.ap-chengdu.myqcloud.com/banner.jpg" width="100%" height="auto" alt="photos" display="block"/></a>
+<p>
+<p>
+    
+   <div class="comment"></div>
+    
+    <script>
+        new Valine({
+            // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+            av: AV, 
+            el: '.comment', // 
+            app_id: '5z3QHKTEMlSqxReRnfeFG1cC-gzGzoHsz', // 这里填写上面得到的APP ID
+            app_key: '59CrEdy9yw1xmqcDQ4JcJbWy', // 这里填写上面得到的APP KEY
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!', // [v1.0.7 new]留言框占位提示文字
+            avatar:'wavatar',
+            path:window.location.pathname,
+            guest_info:['nick','mail','link'] ,
+            pageSize:10,
+        });
+    </script>
+
+	
+
+<!--div id="plus"></div>
+<script src="https://qingqing.com/static/js/plus.js"></script-->
+
+
+
+
+<link href="/public/css/top.css/" rel="stylesheet" type="text/css" />
+<script src="/public/js/jquery.js?v=1.83.min/" type="text/javascript"></script>
+<script src="/public/js/top.js/"></script>
+<div style="display: none;" id="rocket-to-top">
+<div style="opacity:0;display: block;" class="level-2"></div>
+<div class="level-3"></div>
+
+
+
+
+
+            
+    <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Weibo -->
+          <li class="navigation__item_social">
+            <a href="http://weibo.com/522678560" title="@522678560 的微博" target="_blank">
+              <i class='social fa fa-weibo fa-2x'></i>
+              <span class="label">Weibo</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/rekeryang" title="@rekeryang 的 Github" target="_blank">
+              <i class='social fa fa-github fa-2x'></i>
+              <span class="label">Github</span>
+            </a>
+          </li>
+          
+          
+          
+
+          
+
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <i class='social fa fa-rss fa-2x'></i>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:3806165@qq.com" title="Contact me">
+              <i class='social fa fa-envelope fa-2x'></i>
+              <span class="label">Email</span>
+            </a>
+          </li>
+          
+
+          </ul>
+        </nav>
+
+        </div>
+
+
+
+        <div class = "footer_div">  
+           <p class="copyright text-muted">
+            Copyright &copy; 睿客杨一帆 2017-2019 Theme by <a href="http://robotkang.cc/">robotkang</a>|
+            <iframe
+                style="margin-left: 2px; margin-bottom:-5px;"
+                frameborder="0" scrolling="0" width="91px" height="20px"
+                src="https://ghbtns.com/github-btn.html?user=MengZheK&repo=kangblog.github.io&type=star&count=true" >
+            </iframe>|
+            
+<!-- cnzz -->
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261874359'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1261874359%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>|
+
+
+<!-- cc -->
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/cn/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/3.0/cn/80x15.png" /></a>
+
+
+</p>        	
+
+
+<!-- 访问统计 -->
+
+<div align="right">
+    			
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+ 
+      Total <span id="busuanzi_value_site_pv"></span> views.
+您是我的第<span id="busuanzi_value_site_uv"></span> 个访客..
+<span id="busuanzi_value_page_pv"></span> Hits
+  
+          </span>
+        </div>
+        <div>
+    </footer>
+</section>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+
+
+
+        </div>
+    
+
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/public/js/main.js"></script>
+
+<script type="text/javascript" src="/public/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    
+<!--小人只在首页显示 start*-->
+<div id="spig" class="spig">
+    <div id="message">正在加载中……</div>
+    <div id="mumu" class="mumu"></div>
+</div>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="/public/js/jquery.xiaoren.js"></script>
+<script type="text/javascript" src="/public/js/spig.js"></script>
+<link rel="stylesheet" href="/public/css/xiaoren.css" type="text/css"/>
+<script type="text/javascript">
+var isindex = true;
+var visitor = true;
+</script>
+
+
+<!--博客鼠标点击显示文字JS特效代码 -->
+
+<script type="text/javascript">
+
+var a_idx = 0;
+jQuery(document).ready(function($) {
+ $("body").click(function(e) {
+ var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善");
+ var $i = $("<span/>").text(a[a_idx]);
+ a_idx = (a_idx + 1) % a.length;
+ var x = e.pageX,
+ y = e.pageY;
+ $i.css({
+ "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+ "top": y - 20,
+ "left": x,
+ "position": "absolute",
+ "font-weight": "bold",
+ "color": "#ff6651"
+ });
+ $("body").append($i);
+ $i.animate({
+ "top": y - 180,
+ "opacity": 0
+ },
+ 1500,
+ function() {
+ $i.remove();
+ });
+ });
+});
+</script>
+
+</body>
+
+</html>
