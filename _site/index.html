@@ -1,816 +1,872 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-
-  <title>睿客杨一帆</title>
-  <meta name="description" content="欢迎来到我的个人博客~">
-  <meta name="author" content="robotkang">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="睿客杨一帆">
-  <meta name="twitter:description" content="欢迎来到我的个人博客~">
-  
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="睿客杨一帆">
-  <meta property="og:description" content="欢迎来到我的个人博客~">
-  
-  <link rel="icon" type="image/png" href="/public/images/favicon.png" />
-  <link href="/public/images/favicon.png" rel="shortcut icon" type="image/png">
-  
-  <link rel="stylesheet" href="/public/css/main.css">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-  <link rel="canonical" href="http://localhost:4000/">
-  <link rel="alternate" type="application/rss+xml" title="睿客杨一帆" href="http://localhost:4000/feed.xml">
-  
-  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
-
-
-<script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=2854006074878156134' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();</script>
-
-
-<!-- 百度统计 -->
-  
-
-<!-- google 统计 -->
-  
-
-<!-- Valine Comment -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="关于程序与设计、黑客与画家 | 睿客杨，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @睿客杨 的个人博客，与你一起发现更大的世界。">
+    <meta name="keywords"  content="睿客杨, 睿客杨的博客,全栈,Rekeryang Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端, 设计">
+    <meta name="theme-color" content="#000000">
     
+    <!-- Open Graph -->
+    <meta property="og:title" content="睿客杨的个人博客 | Rekeryang Blog">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="我干了什么 究竟拿了时间换了什么">
+    
+    <meta property="og:image" content="http://localhost:4000/img/avatar-hux-ny.jpg">
+    <meta property="og:url" content="http://localhost:4000/">
+    <meta property="og:site_name" content="睿客杨的个人博客 | Rekeryang Blog">
+    
+    <title>睿客杨的个人博客 | Rekeryang Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="//pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="//img/favicon.ico">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000//">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="//css/hux-blog.min.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
 </head>
 
 
-  <body style="height:1000px;">
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
 
-   <meta name="baidu-site-verification" content="0L5MKMrHOb" />
+    <!-- Navigation -->
 
-    <span class="mobile btn-mobile-menu">        
-      <div class="nav_container">
-         <nav class="nav-menu-item" style = "float:right">
-            <i class="nav-menu-item">
-              <a href="/#blog" title="" class="blog-button">  博客主页
-              </a>
-            </i>
-            
-                <i class="nav-menu-item">
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
 
-                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
-                      所有文章
-                  </a>
-                </i>
-            
-                <i class="nav-menu-item">
-
-                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
-                      标签
-                  </a>
-                </i>
-            
-                <i class="nav-menu-item">
-
-                  <a href="/liuyan" title="liuyan" class="btn-mobile-menu__icon">
-                      留言
-                  </a>
-                </i>
-            
-                <i class="nav-menu-item">
-
-                  <a href="/ziyuan" title="ziyuan" class="btn-mobile-menu__icon">
-                      资源
-                  </a>
-                </i>
-            
-                <i class="nav-menu-item">
-
-                  <a href="/about" title="about" class="btn-mobile-menu__icon">
-                      关于我
-                  </a>
-                </i>
-            
-          </nav>
-      </div>
-    </span>
-
-
-    <header class="panel-cover ">
-<style type="text/css">
-
-</style>
-
-  <div class="panel-main">
-
-    <div class="panel-main__inner panel-inverted">
-    <div class="panel-main__content">
-        <!-- 头像效果-start -->
-        <div class="ih-item circle effect right_to_left">
-            <a href="/#blog" title="前往 睿客杨一帆 的主页" class="blog-button">
-                <div class="img"><img src="/public/images/avatar.jpg" alt="img"></div>
-                <div class="info">
-                    <div class="info-back">
-                        <h1>
-                            
-                                Rekeryang
-                            
-                        </h1>
-                        <p>
-                           
-                                移动互联网开发
-                            
-                        </p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- 头像效果-end -->
-        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for 睿客杨一帆" class="blog-button">睿客杨一帆</a></h1>
-        
-        <hr class="panel-cover__divider" style="height:1px;border:none;border-top:1px solid #555555;"/>
-        <p class="panel-cover__description">欢迎来到我的个人博客~</p>
-        <hr class="panel-cover__divider panel-cover__divider--secondary" style="height:1px;border:none;border-top:1px solid #555555;"/>
-
-        
-
-
-        <div class="navigation-wrapper">
-          <div>
-            <nav class="cover-navigation cover-navigation--primary">
-              <ul class="navigation">
-                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
-                
-                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
-                
-                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
-                
-                  <li class="navigation__item"><a href="/liuyan" title="liuyan">留言</a></li>
-                
-                  <li class="navigation__item"><a href="/ziyuan" title="ziyuan">资源</a></li>
-                
-                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
-                
-              </ul>
-            </nav>
-          </div>
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="//">Rekeryang Blog</a>
         </div>
 
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="//">Home</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="//about/">About</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="//archive/">Archive</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="//portfolio/">Portfolio</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
 
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Page Header -->
+
+
+
+
+
+
+
+<header class="intro-header" style="background-image: url('//img/home-bg.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="site-heading">
+        
+          <h1>Rekeryang Blog</h1>
+          <span class="subheading">我干了什么 究竟拿了时间换了什么</span>
         </div>
       </div>
     </div>
-
-
-    
-    <div class="panel-cover--overlay cover-disabled"></div>
-    
   </div>
 </header>
 
 
-    <div class="content-wrapper">
-        <div class="content-wrapper__inner">
-            <div class="main-post-list hidden">
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+        
 
-  <ol class="post-list">
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2019/02/welcome-to-jekyll/" title="访问 Welcome to Jekyll!">Welcome to Jekyll!</a></h1>
-      <p class="excerpt">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-r...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2019-02-25 13:23:33 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2019-02-25</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right"></span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2019/02/welcome-to-jekyll/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2019/01/2019plan/" title="访问 时间的朋友丨2018-2019">时间的朋友丨2018-2019</a></h1>
-      <p class="excerpt"> 版权声明：本文为博主原创文章，未经博主允许不得转载。原文地址：http://robotkang.cc/2019/01/2019plan/ 流光容易把人抛，红了樱桃，绿了芭蕉。      又到了年末节点，在这里先恭喜自己，也恭喜大家，年龄又长了一岁，体态又胖了一圈。            回望这一年，走过了很多城市[足迹地图]，看过了很多美景，也认识了很多人。         一路走来，思考了很多，所以觉得还是很有必要复盘一下  2018  年的得与失，规划一下  2019 年要努力的方向...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2019-01-13 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2019-01-13</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">博客</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2019/01/2019plan/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2018/11/MyAPP/" title="访问 我的常用应用-APP">我的常用应用-APP</a></h1>
-      <p class="excerpt"> 版权声明：本文为博主原创文章，未经博主允许不得转载。原文地址：http://robotkang.cc/2018/11/MyAPP/ 我的常用工具  代码： VS code、Notepad++  邮件： Foxmail  网盘： Google Drive、Dropbox 、OneDrive、坚果云、百度云  翻墙： ComWorld  图像： PS、FSCapture（截图）、CAD迷你看图  视频： PowerDirector（威力导演）、会声会影、Potplayer  文档： 石墨文档...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2018-11-21 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2018-11-21</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">博客</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2018/11/MyAPP/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2018/11/pic/" title="访问 将图床从七牛云迁移到腾讯COS">将图床从七牛云迁移到腾讯COS</a></h1>
-      <p class="excerpt"> 版权声明：本文为博主原创文章，未经博主允许不得转载。原文地址：http://robotkang.cc/2018/11/pic/ 最近发现博客里面的好多图片都不显示了，因为我用的是七牛图床，登录七牛一看，[5402] 获取 bucket 域名失败，说是测试域名收回了，导致我的图片都不显示了而且点击预览和下载都是没有反应的 。心中真是万般不爽。就像和多说迁移一样。解决办法就是再绑定一个已备案的域名替代，备案这种东西对于我没什么必要。所以我就打算把图床迁移到腾讯COS（腾讯的有一定的免费容量）...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2018-11-06 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2018-11-06</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">网站建设</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2018/11/pic/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2018/09/Internet/" title="访问 断网312天，害怕的不是孤独而是人们的漠不关心">断网312天，害怕的不是孤独而是人们的漠不关心</a></h1>
-      <p class="excerpt"> 版权声明：本文为博主原创文章，未经博主允许不得转载。原文地址：http://robotkang.cc/2018/09/Internet/ 很少有人类造物能像互联网一样成为堪比水、电、食物一样的生活必需品。可是当你日渐习惯无处不在的 4G 与 WIFI，习惯每天与家人微信视频聊天，习惯每天上厕所刷微博，习惯每天睡前躺在被窝里看视频，习惯到一旦失去手机就无比焦躁后，你还能想象失去网络的生活么？其实现实远比想象走的更远。2009年7月，新疆开始实施网络管制。2010年5月，新疆全面恢复互联网业...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2018-09-30 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2018-09-30</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">博客</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2018/09/Internet/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2018/09/house/" title="访问 杂谈 | 今天聊聊房子那些事">杂谈 | 今天聊聊房子那些事</a></h1>
-      <p class="excerpt"> 版权声明：本文为博主原创文章，未经博主允许不得转载。原文地址：http://robotkang.cc/2018/09/house/           最近一直再看一些关于历史、制度的剧和房子社会经济的文章，今晚先总结一部分输出一下，先讲讲 房子为什么会这么贵 ，后续的文章可能会围绕房子讲到历史、经济、制度等问题。        现在的房子可谓是每个底层老百姓的头等大事，没有房子似乎好多事情都无从谈起。        许多人心怀房价肯定会跌回2004年的美好愿望，刻舟求剑似的思维错过了一...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2018-09-25 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2018-09-25</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">博客</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2018/09/house/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2018/09/Lissajous/" title="访问 Lissajous 曲线的动画演示">Lissajous 曲线的动画演示</a></h1>
-      <p class="excerpt">随着常数 m 和 n 的变化，参数方程 x = sin(m · t), y = sin(n · t) 将会画出一系列漂亮的曲线。法国物理学家 Jules Antoine Lissajous 曾在 1857 年研究过这类曲线，因此人们把它叫做 Lissajous 曲线。我在 Matrix67 上看到了一个 Lissajous曲线的动画演示，觉得看起来确实非常爽；这个动画展示的是 m = 13, n = 18 时的 Lissajous 曲线。  村上春树说 ：“你要记得那些黑暗中默默抱紧你的人...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2018-09-21 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2018-09-21</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">博客</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2018/09/Lissajous/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2018/09/coding/" title="访问 少儿编程创客教育类公司汇总">少儿编程创客教育类公司汇总</a></h1>
-      <p class="excerpt"> 版权声明：本文为博主原创文章，未经博主允许不得转载。原文地址：http://robotkang.cc/2018/09/coding/ 为了保障我能够随时上 Google 查资料，把我以前和现在以及将来我可能要用的付费工具（服务商）汇总一下，以防不测。1、 弧特云 2、 BiwCloud3、AgentNEO4、 天路云服务 为众人抱火者，不可使其冻毙于风雪。     为自由开路者，不可使其困顿于荆棘。– 愿大家永远坚强，永远懂得如何飞翔   　def show  @widget = Wid...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2018-09-03 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2018-09-03</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">博客</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2018/09/coding/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2018/08/go-to-Google/" title="访问 【汇总】可以访问 Google 的工具/网络服务商">【汇总】可以访问 Google 的工具/网络服务商</a></h1>
-      <p class="excerpt"> 版权声明：本文为博主原创文章，未经博主允许不得转载。原文地址：http://robotkang.cc/2018/08/go-to-Google/ 为了保障我能够随时上 Google 查资料，把我以前和现在以及将来我可能要用的付费工具（服务商）汇总一下，以防不测。1、 comworld2、 弧特云  ~3、AgentNEO4、 天路云服务 为众人抱火者，不可使其冻毙于风雪。     为自由开路者，不可使其困顿于荆棘。– 愿大家永远坚强，永远懂得如何飞翔   　  总有一天，会有一个人，看你...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2018-08-05 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2018-08-05</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">博客</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2018/08/go-to-Google/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2018/06/OpenCV-ABC/" title="访问 OpenCV 从入门到...">OpenCV 从入门到...</a></h1>
-      <p class="excerpt"> 版权声明：本文为博主原创文章，未经博主允许不得转载。原文地址：http://robotkang.cc/2018/06/OpenCV-ABC/ Visual Studio 2010 安装　为了和书本统一我安装了Visual Studio 2010 旗舰版本，安装还算顺利。出现了一些 Bug，通过搜索也顺利的解决了..  下载网站：https://msdn.itellyou.cn安装并配置OpenCV 1. 进入OpenCV官网，下载软件   官网: https://opencv.org/r...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2018-06-07 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2018-06-07</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">机器视觉</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2018/06/OpenCV-ABC/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2018/05/QR-code/" title="访问 [转]多合一收款二维码原理及实现(源码)">[转]多合一收款二维码原理及实现(源码)</a></h1>
-      <p class="excerpt">最近芝麻二维码的“收款码合并”火了，它能将微信收款码和支付宝收款码合并为一个二维码！听上去感觉很神奇，其实原理非常简单！无论是支付宝还是微信的收款码，其本质上是一个包含了收款链接的二维码。所以我们的思路是：检测如果是支付宝浏览页面，就给出支付宝的付款链接、如果是微信，就给出微信链接……那么问题来了，如何进行判定呢？很好办，根据 UA 就能进行判定了！不懂什么是 UA？请参照 浏览器野史 – UserAgent列传 这篇博文。这部分的代码如下：      if(navigator.userA...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2018-05-13 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2018-05-13</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">闲言碎语</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2018/05/QR-code/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2018/05/Personal-information/" title="访问 无处安放的个人信息-Privacy">无处安放的个人信息-Privacy</a></h1>
-      <p class="excerpt"> 版权声明：本文为博主原创文章，未经博主允许不得转载。原文地址：http://robotkang.cc/2018/05/Personal-information/ 正在写，，，writing…  以前是知道有翻墙这么个东西，总感觉天朝的网络世界已经够我遨游了，而且处处是一片祥和，所以就觉得墙内挺好，也就懒得架梯子翻墙了，但最近时不时的要上网查点技术资料，有的时候需要频繁的访问国外的一些网站，可在天朝是不能随随便便访问外网的。搜索一番，在无意中发现了WiuCloud这个网站。免费使用了一下感...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2018-05-08 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2018-05-08</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">博客</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2018/05/Personal-information/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2018/03/XMind/" title="访问 XMind8 Pro安装激活教程">XMind8 Pro安装激活教程</a></h1>
-      <p class="excerpt"> 版权声明：本文为博主原创文章，未经博主允许不得转载。原文地址：http://robotkang.cc/2018/03/XMind/ Xmind8 Pro安装教程（Win）xmind是一款优秀的思维导图制作软件，这一点相信不用太多解释，从大家搜遍网络找破解/激活版本就能够看得出来了哈！网上关于激活的方法有很多，自己也整理了一下，此篇内容涵盖win版本的激活步骤。自己试过可以激活截止2017年09月16日的 xmind8 的 up4 版本，以后的版本没有试过。下面就以 xmind8 的 up...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2018-03-10 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2018-03-10</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">博客</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2018/03/XMind/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2018/02/centos-crontab/" title="访问 CentOS7定时任务详解">CentOS7定时任务详解</a></h1>
-      <p class="excerpt">  前言  crontab  1，crontab命令  2，crontab 格式  Use the hash sign to prefix a comment  +—————- minute (0 – 59)  | +————- hour (0 – 23)  | | +———- day of month (1 – 31)  | | | +——- month (1 – 12)  | | | | +—- day of week (0 – 7) (Sunday=0 or 7)  | | | | ...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2018-02-10 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2018-02-10</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">centos7crontablinux工具软件</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2018/02/centos-crontab/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2018/02/about-inner-outer-ip/" title="访问 工作填坑之内网与外网">工作填坑之内网与外网</a></h1>
-      <p class="excerpt">  概念  坑  场景  解决  总结概念内网：  内网也就是局域网，内网的计算机以NAT（网络地址转换）协议，通过一个公共的网关访问Internet。内网的计算机可向Internet上的其他计算机发送连接请求，但Internet上其他的计算机无法向内网的计算机发送连接请求。  最直观的就是像网吧，公司内部的电脑用交换机，HUB，路由连起来的外网：  外网IP包括：ADSL拨号的动态IP用动态解析域名来绑定IP，又叫动态域名；固定的外网IP(这种多半为网吧的IP)即，整个网吧的那个主IP。...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2018-02-01 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2018-02-01</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">MongoDBRedis工具软件</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2018/02/about-inner-outer-ip/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2018/01/setup-mysql-inubuntu/" title="访问 Ubuntu 16.04 下MySQL的安装">Ubuntu 16.04 下MySQL的安装</a></h1>
-      <p class="excerpt">1， 打开终端：  sudo apt-get install mysql-server2 ，接下来会让你选择y/n, 这里你选择y,3 ，这里会出现一个让你输入mysql-server的密码，输入完后如果鼠标点击不了，可以使用Tab键+enter键继续下一步4 ，接下来，会继续让我们输入一次密码5， 密码输入完后，我们这里的mysql-server的用户名是：root ，密码是我们刚刚设置过的密码，6， 这时候已经安装完成了，我们需要验证一下是否安装上了mysql-server  mysq...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2018-01-13 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2018-01-13</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">linuxubuntu16.04工具软件</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2018/01/setup-mysql-inubuntu/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2018/01/close-win10-update/" title="访问 win10 关闭更新">win10 关闭更新</a></h1>
-      <p class="excerpt">  前言  操作步骤前言因为自己的电脑装了双系统（win10 跟Ubuntu16.04），在win10下，有时候每次关机的时候都说要进行更新后进行关机，就是自动更新功能，现在的选项中没有关闭自动更新的选项了，这是一个bug，微软要强制更新。我就忍受不了自动更新，会拉取网络，影响我们的上网体验，但是我们不要他自动更新，那怎么办呢，其实还是有解决方法的，下面就介绍怎么关闭自动更新功能！（ps：百度有些人写的其实是win8的自动更新，根本就不是win10的，我这个才是win10的处理方法）希望能...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2018-01-13 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2018-01-13</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">win10工具软件</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2018/01/close-win10-update/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2018/01/python_crawl_words/" title="访问 News_scrapy_redis 框架系统">News_scrapy_redis 框架系统</a></h1>
-      <p class="excerpt">  前言  设计目标  框架使用说明  框架环境  框架完善前言该文档针对爬虫系统设计目标中相应的场景给出技术方案设计目标1、代码复用，功能模块化。可以支持上千个网站的数据爬取；2、易扩展。爬虫框架易扩展，爬取规则、解析规则、入库规则易扩展，支持框架切换；3、健壮性、可维护性。对数据爬取过程中的各种异常，例如：断网、反爬升级、爬“脏数据”等，需要实时的监控，以及给出准确的定位。异常处理以及降级措施需要完善；4、后续扩展为分布式结构；5、支持功能模块的易调整；框架使用说明News_scrap...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2018-01-09 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2018-01-09</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">scrapy_redis爬虫</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2018/01/python_crawl_words/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2018/01/scrapy-setup-in-win/" title="访问 window下python3环境安装scrapy">window下python3环境安装scrapy</a></h1>
-      <p class="excerpt">  环境：  初次安装：  打开网站  安装wheel  安装.whl文件  end目录：[TOC]环境：  python3  3.6.4， win7 64位初次安装：  pip install scrapy使用这个命令，在win7 64位是怎么也安装不上去的，因为这已经是第二次了，当这个命令输出完后，会出现一系列的问题。当然了，不用怕，这不是需要解决问题的方法来了嘛。可能出现需要下载版本对应的visual studio,但是也太大了，或也可以说下载慢。。。。。。但是，我们可以不用去进行下...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2018-01-04 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2018-01-04</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">scrapy爬虫</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2018/01/scrapy-setup-in-win/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h1 class="post-list__post-title post-title"><a href="/2017/12/Ubuntu16.04-pycharm-icon-setting/" title="访问 Ubuntu16.04设置Pycharm桌面快捷键">Ubuntu16.04设置Pycharm桌面快捷键</a></h1>
-      <p class="excerpt">  Ubuntu下所有的快捷方式都在：  解压  终端打开  张贴  添加可执行权限  拷贝到桌面Ubuntu下所有的快捷方式都在：/usr/share/applications解压这里我将pycharm下载并解压到了/home/snakeson/developer文件夹下这里的pycharm.sh是批处理执行文件，prcharm.png是快捷方式图标终端打开使用Ubuntu终端进行打开：方法一（使用vim）：sudo vi  /usr/share/applications/pycharm...&hellip;</p>
-      <div class="post-list__meta">
-        <time datetime="2017-12-13 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/public/images/calendar.png" width="20px" />
-          2017-12-13</time>
-        <div class = "tag-img-icon">
-          <img src="/public/images/tag-icon.svg" width="20px" />
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">UbuntuPycharm</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2017/12/Ubuntu16.04-pycharm-icon-setting/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-  </ol>
-
-  <hr class="post-list__divider " />
-
-<nav class="pagination" role="navigation">
-
-	<!-- 百度搜索-->
-	<script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=12441349038163667913' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
-	</script> 
-	
-    
-    <span class="pagination__page-number">1 / 4</span>
-    
-        <a class="older-posts pagination__older btn btn-small btn-tertiary" href="/page/2/#blog">更早 &rarr;</a>
-    
-</nav>
-
-
-</div>
-
-<!--<script src="/public/js/canvas-nest.min.js"></script>-->
-
-
-
-<link href="/public/css/top.css" rel="stylesheet" type="text/css" />
-<script src="/public/js/jquery.js?v=1.83.min" type="text/javascript"></script>
-<script src="/public/js/top.js"></script>
-<div style="display: none;" id="rocket-to-top">
-<div style="opacity:0;display: block;" class="level-2"></div>
-<div class="level-3"></div>
-</div>
-
-
-
-
-
-<!--baidu-->
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
-<body style="height:1000px;">
-
-            
-    <section class="footer">
-    <footer>
-        <div class = "footer_div">  
-        <nav class="cover-navigation navigation--social">
-          <ul class="navigation">
-
-          
-          <!-- Weibo -->
-          <li class="navigation__item_social">
-            <a href="http://weibo.com/522678560" title="@522678560 的微博" target="_blank">
-              <i class='social fa fa-weibo fa-2x'></i>
-              <span class="label">Weibo</span>
-            </a>
-          </li>
-          
-
-          
-          <!-- Github -->
-          <li class="navigation__item_social">
-            <a href="https://github.com/rekeryang" title="@rekeryang 的 Github" target="_blank">
-              <i class='social fa fa-github fa-2x'></i>
-              <span class="label">Github</span>
-            </a>
-          </li>
-          
-          
-          
-
-          
-
-          <!-- RSS -->
-          <li class="navigation__item_social">
-            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
-              <i class='social fa fa-rss fa-2x'></i>
-              <span class="label">RSS</span>
-            </a>
-          </li>
-
-          
-          <!-- Email -->
-          <li class="navigation__item_social">
-            <a href="mailto:3806165@qq.com" title="Contact me">
-              <i class='social fa fa-envelope fa-2x'></i>
-              <span class="label">Email</span>
-            </a>
-          </li>
-          
-
-          </ul>
-        </nav>
-
-        </div>
-
-
-
-        <div class = "footer_div">  
-           <p class="copyright text-muted">
-            Copyright &copy; 睿客杨一帆 2017-2019 Theme by <a href="http://robotkang.cc/">robotkang</a>|
-            <iframe
-                style="margin-left: 2px; margin-bottom:-5px;"
-                frameborder="0" scrolling="0" width="91px" height="20px"
-                src="https://ghbtns.com/github-btn.html?user=MengZheK&repo=kangblog.github.io&type=star&count=true" >
-            </iframe>|
-            
-<!-- cnzz -->
-<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261874359'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1261874359%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>|
-
-
-<!-- cc -->
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/cn/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/3.0/cn/80x15.png" /></a>
-
-
-</p>        	
-
-
-<!-- 访问统计 -->
-
-<div align="right">
+<!-- USE SIDEBAR -->
+    <!-- PostList Container -->
+    		<div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                postlist-container
+            ">
     			
-<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
- 
-      Total <span id="busuanzi_value_site_pv"></span> views.
-您是我的第<span id="busuanzi_value_site_uv"></span> 个访客..
-<span id="busuanzi_value_page_pv"></span> Hits
-  
-          </span>
+<div class="post-preview">
+    <a href="//2018/10/06/vim-cn-im/">
+        <h2 class="post-title">
+            Vim 与中文输入法
+        </h2>
+        
+        <h3 class="post-subtitle">
+            Using Vim with non-english input method
+        </h3>
+        
+        <div class="post-content-preview">
+            
+                Update: 我最后还是放弃在 Vim 模式下输入中文了，mental model 的 cost 太重了（
+
+
+
+我相信很多中文世界的 Vimer 都遇到过这个烦恼，在 vim 的 insert 模式时可能突然想输个中文，输完之后会本能的直接 esc 接 normal 模式操作，结果发现跳出来的是中文输入法……对于 vscode，我一般会在几次错误之后被逼到退出 vscode vim...
+            
         </div>
-        <div>
-    </footer>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on October 6, 2018
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="//2018/09/27/avoiding-success-at-all-cost/">
+        <h2 class="post-title">
+            Avoiding success at all cost
+        </h2>
+        
+        <h3 class="post-subtitle">
+            Watching "Escape from the Ivory Tower: The Haskell Journey"
+        </h3>
+        
+        <div class="post-content-preview">
+            
+                “Avoiding success at all cost” is the informal motto behinds Haskell. It could be parenthesized in two ways, either “Avoiding (success at all cost)” or “(Avoiding sucess) (at all cost)”.
+
+I’m not going to interpret them directly but rather to share some thoughts on “the success vs. costs” basing ...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on September 27, 2018
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="//2018/06/30/dreamer/">
+        <h2 class="post-title">
+            程序员中的梦想家
+        </h2>
+        
+        <h3 class="post-subtitle">
+            Dreamers among programmers
+        </h3>
+        
+        <div class="post-content-preview">
+            
+                
+  本文首发于我的知乎专栏 The Little Programmer，转载请保留链接 ;)
+
+
+有一类程序员是 visionary 型的，为了实现一些超前的 idea，绕过某些技术的限制，他们写的 code 晦涩高深得只有他们自己能懂，做出来的 tool 看上去很美好结果处处是坑出了 bug 根本没法查，但正是这类人不断创造出新的东西，在洗礼之后成为一个个 big thing。
+
+我每周...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on June 30, 2018
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="//2017/12/12/uncomputable-funcs/">
+        <h2 class="post-title">
+            「知乎」如何证明不可计算的函数比可计算的函数多？
+        </h2>
+        
+        <h3 class="post-subtitle">
+            Why is there more uncomputable functions?
+        </h3>
+        
+        <div class="post-content-preview">
+            
+                
+  这篇文章转载自我在知乎上的回答
+
+
+严谨的证明的话，可以使用「形式语言」（Formal language）来证明：
+
+在可计算理论和计算复杂度理论中，每个「计算问题」都被描述为一个一个「形式语言」，即字符串的集合。比如对于判断一个图是否是无向连通图这个问题：我们可以写为一个描述所有无向连通图的集合：
+
+
+
+由于图灵机只能接受字符串，所以这里的尖括号表示对图的「编码」。出于简单，我们全部...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on December 12, 2017
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="//2017/12/12/halting-problem/">
+        <h2 class="post-title">
+            「知乎」如何通俗地解释停机问题？
+        </h2>
+        
+        <h3 class="post-subtitle">
+            How to explain the Halting Problem?
+        </h3>
+        
+        <div class="post-content-preview">
+            
+                
+  这篇文章转载自我在知乎上的回答
+
+
+我用 Python 伪代码来解释下，我觉得对这个问题有兴趣的应该都是有点编程基础的，所以直接上 code 应该是最容易的。
+
+背景知识
+
+「停机问题」研究的是：是否存在一个「程序」，能够判断另外一个「程序」在特定的「输入」下，是会给出结果（停机），还是会无限执行下去（不停机）。
+
+在下文中，我们用「函数」来表示「程序」，「函数返回」即表示给出了结果。...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on December 12, 2017
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="//2017/10/06/css-complaints/">
+        <h2 class="post-title">
+            「知乎」为什么 CSS 这么难学？
+        </h2>
+        
+        <h3 class="post-subtitle">
+            Why I dislike CSS as a programming language
+        </h3>
+        
+        <div class="post-content-preview">
+            
+                
+  这篇文章转载自我在知乎上的回答
+
+
+对我来说，CSS 难学以及烦人是因为它「出乎我意料之外的复杂」且让我觉得「定位矛盾」。
+
+@方应杭 老师的答案我赞了：CSS 的属性互不正交，大量的依赖与耦合难以记忆。
+
+@顾轶灵 @王成 说得也没错：CSS 的很多规则是贯彻整个体系的，而且都记在规范里了，是有规律的，你应该好好读文档而不是去瞎试。
+
+「CSS是一门正儿八经的编程语言，请拿出你学C+...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on October 6, 2017
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="//2017/07/26/farewell-flash/">
+        <h2 class="post-title">
+            Farewell, Flash. 感谢你，但这一次是真正的永别。
+        </h2>
+        
+        <h3 class="post-subtitle">
+            So long, and thanks for all the Flash
+        </h3>
+        
+        <div class="post-content-preview">
+            
+                
+  本文首发于我的知乎专栏 The Little Programmer，转载请保留链接 ;)
+
+
+一年半前，我曾和 Flash 作过一次告别。那一次，Adobe Flash Professional CC 被重新命名为了 Adobe Animate CC，宣告着 Flash 作为一个创作工具走到了尽头。
+
+
+
+而今天，通过 Chromium 博客 So long, and thanks f...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on July 26, 2017
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="//2017/07/12/upgrading-eleme-to-pwa/">
+        <h2 class="post-title">
+            饿了么的 PWA 升级实践
+        </h2>
+        
+        <h3 class="post-subtitle">
+            Upgrading Ele.me to Progressive Web App
+        </h3>
+        
+        <div class="post-content-preview">
+            
+                
+
+    
+    
+
+  很荣幸在今年 2 月到 5 月的时间里，以顾问的身份加入饿了么，参与 PWA 的相关工作。这篇文章其实最初是在以英文写作发表在 medium 上的：Upgrading Ele.me to Progressive Web Apps，获得了一定的关注。所以也决定改写为中文版本再次分享出来，希望能对你有所帮助 ;) 
+本文首发于 CSDN 与《程序员》2017 年 7...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on July 12, 2017
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="//2017/06/24/you-are-slaves/">
+        <h2 class="post-title">
+            他是狗，你们便是苟奴隶
+        </h2>
+        
+        <div class="post-content-preview">
+            
+                
+  在知乎被删帖，我理解知乎。
+你说你们做不了什么，我也理解你们。
+
+只是，总要有人，还敢说点反对的声音吧？  
+只是，不想让这一切，看起来都变得如此理所应当吧？
+
+你说，你们也抗争了
+那就站出来，让我们相信，你们还在吧？
+
+
+我甚至都不需要写出 LGL 三个顶天立地的大字，你们便知道我今天要说什么了。
+骂狗官、骂体制、骂 D，骂的人已经够多了。我故是可以再骂，却也深知自己甚至连让他们听到...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on June 24, 2017
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="//2017/05/28/sw-precache/">
+        <h2 class="post-title">
+            How does SW-Precache works?
+        </h2>
+        
+        <div class="post-content-preview">
+            
+                SW-Precache is a great Service Worker tool from Google. It is a node module designed to be integrated into your build process and to generate a service worker for you. Though you can use sw-precache out of the box, you might still wonder what happens under the hood. There you go, this article is ...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on May 28, 2017
+    </p>
+</div>
+<hr>
+
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+    
+    <li class="next">
+        <a href="/page2">Older Posts &rarr;</a>
+    </li>
+    
+</ul>
+
+
+    		</div>
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
+                <!-- Featured Tags -->
+                
+
+
+<section>
+    
+    <h5><a href="//archive/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
+        
+        
+        </a>
+        
+        
+                <a data-sort="0027" 
+                    href="//archive/?tag=%E7%9F%A5%E4%B9%8E"
+                    title="知乎"
+                    rel="10">知乎</a>
+        
+                <a data-sort="0018" 
+                    href="//archive/?tag=Web"
+                    title="Web"
+                    rel="19">Web</a>
+        
+                <a data-sort="0030" 
+                    href="//archive/?tag=UX%2FUI"
+                    title="UX/UI"
+                    rel="7">UX/UI</a>
+        
+                <a data-sort="0031" 
+                    href="//archive/?tag=%E4%BA%A7%E5%93%81"
+                    title="产品"
+                    rel="6">产品</a>
+        
+                <a data-sort="0031" 
+                    href="//archive/?tag=PWA"
+                    title="PWA"
+                    rel="6">PWA</a>
+        
+                <a data-sort="0033" 
+                    href="//archive/?tag=JavaScript"
+                    title="JavaScript"
+                    rel="4">JavaScript</a>
+        
+                <a data-sort="0033" 
+                    href="//archive/?tag=Slides"
+                    title="Slides"
+                    rel="4">Slides</a>
+        
+                <a data-sort="0034" 
+                    href="//archive/?tag=%E7%94%9F%E6%B4%BB"
+                    title="生活"
+                    rel="3">生活</a>
+        
+                <a data-sort="0034" 
+                    href="//archive/?tag=%E7%AC%94%E8%AE%B0"
+                    title="笔记"
+                    rel="3">笔记</a>
+        
+                <a data-sort="0034" 
+                    href="//archive/?tag=%E8%AF%91"
+                    title="译"
+                    rel="3">译</a>
+        
+                <a data-sort="0034" 
+                    href="//archive/?tag=%E9%98%BF%E9%87%8C"
+                    title="阿里"
+                    rel="3">阿里</a>
+        
+                <a data-sort="0034" 
+                    href="//archive/?tag=%F0%9F%87%AC%F0%9F%87%A7"
+                    title="🇬🇧"
+                    rel="3">🇬🇧</a>
+        
+                <a data-sort="0035" 
+                    href="//archive/?tag=%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6"
+                    title="计算机科学"
+                    rel="2">计算机科学</a>
+        
+                <a data-sort="0035" 
+                    href="//archive/?tag=%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA"
+                    title="计算理论"
+                    rel="2">计算理论</a>
+        
+                <a data-sort="0035" 
+                    href="//archive/?tag=CSS"
+                    title="CSS"
+                    rel="2">CSS</a>
+        
+                <a data-sort="0035" 
+                    href="//archive/?tag=Wechat"
+                    title="Wechat"
+                    rel="2">Wechat</a>
+        
+                <a data-sort="0035" 
+                    href="//archive/?tag=hUX+%E9%9A%8F%E6%83%B3%E5%BD%95"
+                    title="hUX 随想录"
+                    rel="2">hUX 随想录
+    </div>
 </section>
 
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
 
-
-
-
-
-        </div>
+                <!-- Short About -->
+                <section class="visible-md visible-lg">
+  <hr>
+  <h5><a href="//about/">ABOUT ME</a></h5>
+  <div class="short-about">
+    
+    <img src="/img/avatar-hux-ny.jpg" />
+    
+    
+    <p>For the next quantum leap<br>离开世界之前，一切都是过程</p>
+    
+    <!-- SNS Link -->
     
 
-    </div>
-    
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="/public/js/main.js"></script>
 
-<script type="text/javascript" src="/public/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<ul class="list-inline">
 
-    
-<!--小人只在首页显示 start*-->
-<div id="spig" class="spig">
-    <div id="message">正在加载中……</div>
-    <div id="mumu" class="mumu"></div>
+
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://www.zhihu.com/people/rekeryang">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa  fa-stack-1x fa-inverse">知</i>
+      </span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a target="_blank" href="http://weibo.com/rekeycloud">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://github.com/rekeryang">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+</ul>
+  </div>
+</section>
+
+                <!-- Friends Blog -->
+                
+<hr>
+<h5>FRIENDS</h5>
+<ul class="list-inline">
+  
+  <li><a href="http://mida.re/">乱序</a></li>
+  
+  <li><a href="http://qianduan.guru/">前端外刊评论</a></li>
+  
+  <li><a href="http://lingyu.wang/">天镶的博客</a></li>
+  
+  <li><a href="http://hmqk1995.github.io">Luke 的自留地</a></li>
+  
+  <li><a href="http://ebnbin.com/">Ebn's Blog</a></li>
+  
+  <li><a href="http://blog.smdcn.net">SmdCn's Blog</a></li>
+  
+  <li><a href="https://www.ruoyaowu.com/">David's Game</a></li>
+  
+  <li><a href="http://dhong.co">DHong Say</a></li>
+  
+  <li><a href="http://ingf.github.io/">尹峰以为</a></li>
+  
+  <li><a href="http://xieminis.me/">解旻的博客</a></li>
+  
+</ul>
+
+    		</div>
+        
+	</div>
 </div>
 
 
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="text/javascript" src="/public/js/jquery.xiaoren.js"></script>
-<script type="text/javascript" src="/public/js/spig.js"></script>
-<link rel="stylesheet" href="/public/css/xiaoren.css" type="text/css"/>
-<script type="text/javascript">
-var isindex = true;
-var visitor = true;
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- SNS Link -->
+                
+
+
+<ul class="list-inline text-center">
+
+
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://www.zhihu.com/people/rekeryang">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa  fa-stack-1x fa-inverse">知</i>
+      </span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a target="_blank" href="http://weibo.com/rekeycloud">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://github.com/rekeryang">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+                <p class="copyright text-muted">
+                    Copyright &copy; Rekeryang Blog 2019
+                    <br>
+                    Powered by <a href="http://huangxuan.me">Hux Blog</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="//js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src="//js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="//js/hux-blog.min.js "></script>
+
+<!-- Service Worker -->
+
+<script src="//js/snackbar.js "></script>
+<script src="//js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+
+
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
 </script>
 
 
-<!--博客鼠标点击显示文字JS特效代码 -->
+<!-- Google Analytics -->
 
-<script type="text/javascript">
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-49627206-1';
+    var _gaDomain = '';
 
-var a_idx = 0;
-jQuery(document).ready(function($) {
- $("body").click(function(e) {
- var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善");
- var $i = $("<span/>").text(a[a_idx]);
- a_idx = (a_idx + 1) % a.length;
- var x = e.pageX,
- y = e.pageY;
- $i.css({
- "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
- "top": y - 20,
- "left": x,
- "position": "absolute",
- "font-weight": "bold",
- "color": "#ff6651"
- });
- $("body").append($i);
- $i.animate({
- "top": y - 180,
- "opacity": 0
- },
- 1500,
- function() {
- $i.remove();
- });
- });
-});
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
 </script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+<!-- Side Catalog -->
+
+
+
+<!-- Multi-Lingual -->
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>
 
