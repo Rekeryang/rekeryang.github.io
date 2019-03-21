@@ -1,930 +1,1010 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="zh-CN">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>主页 - 睿客杨的博客</title>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="description" content="关于程序与设计、黑客与画家 | 睿客杨，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @睿客杨 的个人博客，与你一起发现更大的世界。">
-    <meta name="keywords"  content="睿客杨, 睿客杨的博客,全栈,Rekeryang Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端, 设计">
-    <meta name="theme-color" content="#000000">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="睿客杨的个人博客 | Rekeryang Blog">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="我干了什么 究竟拿了时间换了什么">
-    
-    <meta property="og:image" content="http://localhost:4000/img/avatar-hux-ny.jpg">
-    <meta property="og:url" content="http://localhost:4000/page2/">
-    <meta property="og:site_name" content="睿客杨的个人博客 | Rekeryang Blog">
-    
-    <title>睿客杨的个人博客 | Rekeryang Blog</title>
+<meta name="description" content="欢迎访问我的博客">
+<link rel="canonical" href="http://localhost:4000/page2/"><link rel="alternate" type="application/rss+xml" title="睿客杨的博客" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
 
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="//pwa/manifest.json">
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="//img/favicon.ico">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000//page2/">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" ><!-- start custom head snippets -->
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="//css/bootstrap.min.css">
+<!-- end custom head snippets --><script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="//css/hux-blog.min.css">
+  window.decodeUrl = function(str) {
+    return str ? decodeURIComponent(str.replace(/\+/g, '%20')) : '';
+  };
 
-    <!-- Custom Fonts -->
-    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-    <!-- Hux change font-awesome CDN to qiniu -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
 
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
 
-    <!-- ga & ba script hoook -->
-    <script></script>
-</head>
-
-
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="">
-
-    <!-- Navigation -->
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="//">Rekeryang Blog</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="//">Home</a>
-                    </li>
-                    
-                    
-                    
-                    
-                    <li>
-                        <a href="//about/">About</a>
-                    </li>
-                    
-                    
-                    
-                    <li>
-                        <a href="//archive/">Archive</a>
-                    </li>
-                    
-                    
-                    
-                    
-                    
-                    <li>
-                        <a href="//portfolio/">Portfolio</a>
-                    </li>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                </ul>
-            </div>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
-
-    var __HuxNav__ = {
-        close: function(){
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        },
-        open: function(){
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
         }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
     }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
 
-    // Bind Event
-    $toggle.addEventListener('click', function(e){
-        if ($navbar.className.indexOf('in') > 0) {
-            __HuxNav__.close()
-        }else{
-            __HuxNav__.open()
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
         }
-    })
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
 
-    /**
-     * Since Fastclick is used to delegate 'touchstart' globally
-     * to hack 300ms delay in iOS by performing a fake 'click',
-     * Using 'e.stopPropagation' to stop 'touchstart' event from 
-     * $toggle/$collapse will break global delegation.
-     * 
-     * Instead, we use a 'e.target' filter to prevent handler
-     * added to document close HuxNav.  
-     *
-     * Also, we use 'click' instead of 'touchstart' as compromise
-     */
-    document.addEventListener('click', function(e){
-        if(e.target == $toggle) return;
-        if(e.target.className == 'icon-bar') return;
-        __HuxNav__.close();
-    })
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.4',
+      sources: {
+        font_awesome: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
+        jquery: 'https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js',
+        leancloud_js_sdk: '//cdn1.lncld.net/static/js/3.4.1/av-min.js',
+        chart: 'https://cdn.bootcss.com/Chart.js/2.7.2/Chart.bundle.min.js',
+        gitalk: {
+          js: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.js',
+          css: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.css'
+        },
+        valine: 'https://unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script></head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="24px" height="24px" viewBox="0 0 24 24">
+<style type="text/css">
+	.st0{fill:#515151;}
+</style>
+<path class="st0" d="M1.7,22.3c5.7-5.7,11.3-5.7,17,0c3.3-3.3,3.5-5.3,0.8-6c2.7,0.7,3.5-1.1,2.3-5.6s-3.3-5.2-6.3-2.1
+	c3-3,2.3-5.2-2.1-6.3S7,1.8,7.7,4.6C7,1.8,5,2.1,1.7,5.3C7.3,11,7.3,16.7,1.7,22.3"/>
+</svg><a title="欢迎访问我的博客" href="/">睿客杨的博客</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/archive.html">归档</a></li><li class="navigation__item"><a href="/about.html">关于</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+      </nav></div>
+  </header>
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>主页</h1></header><meta itemprop="headline" content="主页"><meta itemprop="author" content="Rekeryang"/><div class="js-article-content"><div class="layout--articles"><div class="article-list items items--divided"><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/docs/zh/layouts"><h2 itemprop="headline" class="item__header">布局</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">graph TB;
+    NONE[none]
+    BASE[base]
+    PAGE[page]
+    ARTICLE[article]
+    ARTICLES[articles]
+    HOME[home]
+    ARCHIVE[archive]
+    LANDING[landing]
+    404[404]
+    NONE--&gt;BASE;
+    BASE--&gt;PAGE;
+    PAGE--&gt;ARTICLE;
+    PAGE--&gt;ARTICLES;
+    ARTICLES--&gt;HOME;
+    PAGE--&gt;ARCHIVE;
+    PAGE--&gt;LANDING;
+    PAGE--&gt;404;
+
+
+...</div><p><a href="/docs/zh/layouts">阅读更多</a></p></div><div class="article__info clearfix"><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2019年 03月09日</span>
+            </li></ul></div><meta itemprop="author" content="Rekeryang"/><meta itemprop="datePublished" content="2019-03-09T00:00:00+08:00"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/docs/zh/navigation"><h2 itemprop="headline" class="item__header">导航栏</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">在 TeXt 中有两种导航栏：头部导航栏（Header Navigation）和侧边栏导航栏（Sidebar Navigation），它们均在 data/navigation.yml 中配置。</div><p><a href="/docs/zh/navigation">阅读更多</a></p></div><div class="article__info clearfix"><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2019年 03月09日</span>
+            </li></ul></div><meta itemprop="author" content="Rekeryang"/><meta itemprop="datePublished" content="2019-03-09T00:00:00+08:00"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/docs/zh/configuration"><h2 itemprop="headline" class="item__header">配置</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Jekyll 允许你很轻松的设计你的网站，这很大程度上归功于灵活强大的配置功能。既可以配置在网站根目录下的  _config.yml 文件，也可以作为命令行的标记来配置。
+
+_config.yml 包括一些在运行时一次性读入的全局配置和变量定义， 在自动生成的过程中并不会重新加载，除非重新运行。注意 Data Files 包括在自动生成范围内，可以在更改后自动重新加载。</div><p><a href="/docs/zh/configuration">阅读更多</a></p></div><div class="article__info clearfix"><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2019年 03月09日</span>
+            </li></ul></div><meta itemprop="author" content="Rekeryang"/><meta itemprop="datePublished" content="2019-03-09T00:00:00+08:00"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/docs/zh/update-from-1-to-2"><h2 itemprop="headline" class="item__header">从 1.x 升级到 2.x</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">经过几个月的努力，TeXt 2 终于发布了，第二版在第一版的基础上做了大量的重构与更改，这也导致了一些配置的不兼容。希望这篇文档能对你的升级起到一些帮助，感谢你们的支持。
+
+皮肤
+
+_config.yml 中 text_color_theme 配置项更名为 text_skin。
+
+1.x:
+
+text_color_theme: forest
+
+
+text_skin: forest
+
+
+Layout
+
+Article 布局
+
+“Post 布局”和“Page 布局”更名为“Article 布局”。
+
+1.x：
+
+layout: post
+
+
+layout: page
+
+
+2.x：
+
+layout: article
+
+
+由于新的“Article 布局”默认不显示 Toc、在 GitHub 上...</div><p><a href="/docs/zh/update-from-1-to-2">阅读更多</a></p></div><div class="article__info clearfix"><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2019年 03月09日</span>
+            </li></ul></div><meta itemprop="author" content="Rekeryang"/><meta itemprop="datePublished" content="2019-03-09T00:00:00+08:00"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/docs/zh/quick-start"><h2 itemprop="headline" class="item__header">快速开始</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">TeXt 是一款 100% 兼容 GitHub Pages 的 Jekyll 主题，你可以通过 Fork、下载或主题等方式安装。
+
+在这篇文章中，你将学到如何安装设置主题，通过本地预览进行开发以及编译和发布。</div><p><a href="/docs/zh/quick-start">阅读更多</a></p></div><div class="article__info clearfix"><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2019年 03月09日</span>
+            </li></ul></div><meta itemprop="author" content="Rekeryang"/><meta itemprop="datePublished" content="2019-03-09T00:00:00+08:00"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/2018/06/01/header-image.html"><h2 itemprop="headline" class="item__header">Post with Header Image</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">A Post with Header Image, See Page layout for more examples.</div><p><a href="/2018/06/01/header-image.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=TeXt">TeXt</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2018年 06月01日</span>
+            </li></ul></div><meta itemprop="author" content="Rekeryang"/><meta itemprop="datePublished" content="2018-06-01T00:00:00+08:00">
+    <meta itemprop="keywords" content="TeXt"></div>
+      </article></div>
+</div><div class="layout--home"><div class="pagination"><p>共计 14 篇文章，2 页。</p>
+    <div class="pagination__menu">
+      <ul class="menu menu--nowrap"><li><a class="button button--secondary button--circle" href="/">
+            <i class="fas fa-angle-left"></i>
+          </a></li><li>
+              <a class="button button--secondary button--circle" href="/"><span>1</span></a>
+            </li><li>
+              <div class="button button--primary button--circle focus"><span>2</span></div>
+            </li><li><div class="button button--secondary button--circle disabled">
+            <i class="fas fa-angle-right"></i>
+          </div></li></ul>
+    </div>
+  </div></div>
+<script>/*(function () {
+
+})();*/
 </script>
 
 
-    <!-- Page Header -->
+</div><section class="page__comments d-print-none"></section></article><!-- start custom main bottom snippet -->
 
-
-
-
-
-
-
-<header class="intro-header" style="background-image: url('//img/home-bg.jpg')">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        <div class="site-heading">
-        
-          <h1>Rekeryang Blog</h1>
-          <span class="subheading">我干了什么 究竟拿了时间换了什么</span>
-        </div>
+<!-- end custom main bottom snippet --></div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rekeryang"><meta itemprop="url" content="/"><meta itemprop="description" content="移动互联网开发"><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"><li title="给我发邮件。">
+      <a class="button button--circle mail-button" itemprop="email" href="mailto:3806165@qq.com" target="_blank">
+        <i class="fas fa-envelope"></i>
+      </a><li title="在 Weibo 上关注我。">
+        <a class="button button--circle weibo-button" itemprop="sameAs" href="https://weibo.com/rekeycloud" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<path d="M769.226164 496.610234c-14.420098-4.330228-24.309277-7.266877-16.746482-26.214823 16.350218-41.133578 18.046881-76.626289 0.307181-101.939024-33.242099-47.500415-124.194284-44.928286-228.44638-1.280945 0-0.056317-32.73525 14.323848-24.371737-11.64523 16.042013-51.54906 13.626547-94.739726-11.332929-119.662341-56.566349-56.601163-206.976479 2.134908-335.954595 131.078209-96.594075 96.61353-152.681222 198.989775-152.681222 287.52035 0 169.337597 217.152361 272.292366 429.593589 272.292366 278.498445 0 463.752111-161.808592 463.752111-290.273715C893.345701 558.867622 827.968378 514.820945 769.226164 496.610234zM430.163922 866.063936c-169.51781 16.728051-315.851649-59.899262-326.864086-171.202185-11.010389-111.275277 117.530505-215.061482 287.031932-231.823323 169.537265-16.761841 315.876224 59.866496 326.86511 171.119247C728.190884 745.495411 599.705282 849.291856 430.163922 866.063936z" />
+	<path d="M954.16753 186.714824c-67.256246-74.565105-166.457264-102.990607-258.020739-83.522502l-0.037886 0c-21.188318 4.535015-34.695065 25.37929-30.159026 46.527675 4.516584 21.166816 25.352668 34.691993 46.54201 30.174385 65.139769-13.832358 135.634727 6.400627 183.442323 59.368863 47.765615 52.96414 60.740938 125.206957 40.282686 188.537431l0.011263 0.012287c-6.666851 20.629249 4.617954 42.698153 25.271777 49.366027 20.570885 6.662755 42.687913-4.607714 49.362955-25.188838 0-0.037886 0-0.116729 0.011263-0.150519C1039.577146 362.756133 1021.443231 261.206205 954.16753 186.714824" />
+	<path d="M850.886125 279.919669c-32.732179-36.315956-81.068126-50.108381-125.685136-40.621609-18.234261 3.885839-29.856965 21.833398-25.946551 40.085067 3.89915 18.173849 21.833398 29.851845 40.024654 25.893307l0 0.037886c21.809848-4.610786 45.459709 2.113405 61.461789 19.83365 16.018463 17.757107 20.323092 41.949655 13.45043 63.178931l0.035838 0c-5.715614 17.717174 3.983113 36.770584 21.717694 42.511796 17.7397 5.677728 36.76956-3.992328 42.493365-21.756603C892.458972 365.691759 883.686907 316.228458 850.886125 279.919669" />
+	<path d="M447.103928 548.691741c-80.666743-20.985579-171.84317 19.215193-206.880229 90.291746-35.685212 72.492657-1.180599 152.963828 80.321676 179.268757 84.41947 27.224424 183.926645-14.492797 218.521364-92.744074C573.187374 649.021137 530.586496 570.268131 447.103928 548.691741zM385.506979 733.819463c-16.398343 26.160554-51.51015 37.623523-77.954335 25.54824-26.066352-11.868448-33.760211-42.248645-17.360844-67.757975 16.197652-25.400793 50.129884-36.716316 76.378497-25.711046C393.129162 677.216253 401.60838 707.401901 385.506979 733.819463zM439.522702 664.493841c-5.929616 10.131852-19.03498 15.010909-29.304039 10.785123-10.096014-4.15411-13.261002-15.495231-7.522862-25.454038 5.906066-9.908634 18.500485-14.747758 28.572948-10.750309C441.502995 642.817105 445.180975 654.283146 439.522702 664.493841z" />
+</svg>
+</div>
+        </a>
+      </li><li title="在 Zhihu 上关注我。">
+        <a class="button button--circle zhihu-button" itemprop="sameAs" href="https://www.zhihu.com/people/rekeryang" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M351.791182 562.469462l192.945407 0c0-45.367257-21.3871-71.939449-21.3871-71.939449L355.897709 490.530013c3.977591-82.182744 7.541767-187.659007 8.816806-226.835262l159.282726 0c0 0-0.86367-67.402109-18.578124-67.402109s-279.979646 0-279.979646 0 16.850783-88.141456 39.318494-127.053698c0 0-83.60514-4.510734-112.121614 106.962104S81.344656 355.077018 76.80834 367.390461c-4.536316 12.313443 24.62791 5.832845 36.941354 0 12.313443-5.832845 68.050885-25.924439 84.252893-103.69571l86.570681 0c1.165546 49.28652 4.596691 200.335724 3.515057 226.835262L109.86113 490.530013c-25.275663 18.147312-33.701566 71.939449-33.701566 71.939449L279.868105 562.469462c-8.497535 56.255235-23.417339 128.763642-44.275389 167.210279-33.05279 60.921511-50.55235 116.65793-169.802314 212.576513 0 0-19.442818 14.257725 40.829917 9.073656 60.273758-5.185093 117.305683-20.739347 156.840094-99.807147 20.553105-41.107233 41.805128-93.250824 58.386782-146.138358l-0.055259 0.185218 167.855986 193.263655c0 0 22.035876-51.847855 5.832845-108.880803L371.045711 650.610918l-42.1244 31.157627-0.045025 0.151449c11.69946-41.020252 20.11206-81.5749 22.726607-116.858498C351.665315 564.212152 351.72876 563.345412 351.791182 562.469462z" p-id="907"></path><path d="M584.918753 182.033893l0 668.840094 70.318532 0 28.807093 80.512708 121.875768-80.512708 153.600307 0L959.520453 182.033893 584.918753 182.033893zM887.150192 778.934538l-79.837326 0-99.578949 65.782216-23.537066-65.782216-24.855084 0L659.341766 256.673847l227.807403 0L887.149169 778.934538z" />
+</svg></div>
+        </a>
+      </li><li title="在 Douban 上关注我。">
+        <a class="button button--circle douban-button" itemprop="sameAs" href="https://www.douban.com/people/rekeryang" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M161.431 147.172l699.701 0 0 78.813-699.701 0 0-78.814z" />
+  <path d="M800.298 616.311l0-308.108-578.031 0 0 308.108 578.031 0zM306.076 386.961l411.23 0 0 150.633-411.23 0 0-150.633z" />
+  <path d="M675.281 793.89c25.15-38.487 48.885-83.129 70.879-133.81l-84.107-30.649c-21.885 60.046-47.337 114.974-76.324 164.459l-146.332 0c-24.225-64.156-51.607-119.031-82.313-164.459l-77.357 30.649c31.9 47.851 57.651 92.383 77.357 133.81l-215.414 0 0 77.957 739.278 0 0-77.957-205.67 0z" />
+</svg>
+</div>
+        </a>
+      </li><li title="在 Linkedin 上关注我。">
+        <a class="button button--circle linkedin-button" itemprop="sameAs" href="https://www.linkedin.com/in/rekeryang" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M260.096 155.648c0 27.307008-9.899008 50.516992-29.696 69.632-19.796992 19.115008-45.396992 28.672-76.8 28.672-30.036992 0-54.612992-9.556992-73.728-28.672-19.115008-19.115008-28.672-42.324992-28.672-69.632 0-28.672 9.556992-52.224 28.672-70.656 19.115008-18.432 44.372992-27.648 75.776-27.648 31.403008 0 56.32 9.216 74.752 27.648 18.432 18.432 28.331008 41.984 29.696 70.656 0 0 0 0 0 0m-202.752 808.96c0 0 0-632.832 0-632.832 0 0 196.608 0 196.608 0 0 0 0 632.832 0 632.832 0 0-196.608 0-196.608 0 0 0 0 0 0 0m313.344-430.08c0-58.708992-1.364992-126.292992-4.096-202.752 0 0 169.984 0 169.984 0 0 0 10.24 88.064 10.24 88.064 0 0 4.096 0 4.096 0 40.96-68.267008 105.812992-102.4 194.56-102.4 68.267008 0 123.220992 22.868992 164.864 68.608 41.643008 45.739008 62.464 113.664 62.464 203.776 0 0 0 374.784 0 374.784 0 0-196.608 0-196.608 0 0 0 0-350.208 0-350.208 0-91.476992-33.451008-137.216-100.352-137.216-47.787008 0-81.236992 24.576-100.352 73.728-4.096 8.192-6.144 24.576-6.144 49.152 0 0 0 364.544 0 364.544 0 0-198.656 0-198.656 0 0 0 0-430.08 0-430.08 0 0 0 0 0 0" />
+</svg></div>
+        </a>
+      </li><li title="在 Github 上关注我。">
+        <a class="button button--circle github-button" itemprop="sameAs" href="https://github.com/rekeryang" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path class="svgpath" data-index="path_0" fill="#272636" d="M0 525.2c0 223.6 143.3 413.7 343 483.5 26.9 6.8 22.8-12.4 22.8-25.4l0-88.7c-155.3 18.2-161.5-84.6-172-101.7-21.1-36-70.8-45.2-56-62.3 35.4-18.2 71.4 4.6 113.1 66.3 30.2 44.7 89.1 37.2 119 29.7 6.5-26.9 20.5-50.9 39.7-69.6C248.8 728.2 181.7 630 181.7 513.2c0-56.6 18.7-108.7 55.3-150.7-23.3-69.3 2.2-128.5 5.6-137.3 66.5-6 135.5 47.6 140.9 51.8 37.8-10.2 80.9-15.6 129.1-15.6 48.5 0 91.8 5.6 129.8 15.9 12.9-9.8 77-55.8 138.8-50.2 3.3 8.8 28.2 66.7 6.3 135 37.1 42.1 56 94.6 56 151.4 0 117-67.5 215.3-228.8 243.7 26.9 26.6 43.6 63.4 43.6 104.2l0 128.8c0.9 10.3 0 20.5 17.2 20.5C878.1 942.4 1024 750.9 1024 525.3c0-282.9-229.3-512-512-512C229.1 13.2 0 242.3 0 525.2L0 525.2z" />
+</svg>
+</div>
+        </a>
+      </li></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© 睿客杨的博客 2019,
+        Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
+        title="TeXt is a super customizable Jekyll theme." href="https://github.com/rekeryang/jekyll-text-theme">TeXt Theme</a>.
       </div>
     </div>
   </div>
-</header>
-
-
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-        
-
-<!-- USE SIDEBAR -->
-    <!-- PostList Container -->
-    		<div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                postlist-container
-            ">
-    			
-<div class="post-preview">
-    <a href="//2017/04/06/html-document/">
-        <h2 class="post-title">
-            「知乎」如何理解 <code>document</code> 对象是 <code>HTMLDocument</code> 的实例？
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Why is <code>document</code> an instance of <code>HTMLDocument</code>?
-        </h3>
-        
-        <div class="post-content-preview">
-            
-                
-  这篇文章转载自我在知乎上的回答
-
-
-谢邀。
-
-首先要理解的是 DOM 是 API，是一组无关编程语言的接口（Interfaces）而非实现（Implementation）。前端平时常说的 DOM 其实只是浏览器通过 ECMAScript（JavaScript）对 DOM 接口的一种实现。
-
-其次要知道的是，DOM 既是为 HTML 制定的，也是为 XML 制定的。而两者各有一些特异的部...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Hux on April 6, 2017
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="//2017/02/09/nextgen-web-pwa/">
-        <h2 class="post-title">
-            下一代 Web 应用模型 —— Progressive Web App
-        </h2>
-        
-        <h3 class="post-subtitle">
-            The Next Generation Application Model For The Web - Progressive Web App
-        </h3>
-        
-        <div class="post-content-preview">
-            
-                
-  今年 9 月份的时候，《程序员》杂志社就邀请我写一篇关于 PWA 的文章。后来花式拖稿，拖过了 10 月的 QCon，11 月的 GDG DevFest，终于在 12 月把这篇长文熬了出来。几次分享的不成熟，这次的结构算是比较满意了。「 可能是目前中文世界里对 PWA 最全面详细的长文了」，希望你能喜欢。
-本文首发于 CSDN 与《程序员》2017 年 2 月刊，同步发布于 Hux B...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Hux on February 9, 2017
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="//2017/01/09/wechat-miniapp-ux/">
-        <h2 class="post-title">
-            如何客观地评价「小程序」的体验?
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Wechat Mini-Program vs. the Web, a UX comparison
-        </h3>
-        
-        <div class="post-content-preview">
-            
-                
-  本文首发于我的知乎专栏 The Little Programmer，转载请保留链接 ;)
-
-
-2017 年 1 月 9 号凌晨，看完《星战》回家，发现朋友圈都炸了……原来是「小程序」如约公测（以下简称小程序）。果然贵圈人都睡得晚啊，一个个大半夜了精神得不行。
-
-截图推荐什么的已经漫天都是了，而且连 「推荐小程序的小程序」都已经出现了，我们就直入正题吧，今天笔者不跟你们聊情怀，就聊体验：...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Hux on January 9, 2017
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="//2016/11/20/sw-101-gdgdf/">
-        <h2 class="post-title">
-            Service Worker 101「GDG DevFest 2016 北京」
-        </h2>
-        
-        <h3 class="post-subtitle">
-            🎞  Slides:Service Worker 101, Working Offline and Instant Loading (GDG DevFest 2016 Beijing)
-        </h3>
-        
-        <div class="post-content-preview">
-            
-                
-  下滑这里查看更多内容
-
-
-TLDR; It covers lots of cool stuff about Service Worker!
-
-Watching Fullscreen → 
-
-
-    
-    Scanning on mobile
-
-
-Demo Code → 
-
-
-  Hello World of Service Worker
-  Make your own Offli...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Hux on November 20, 2016
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="//2016/10/20/pwa-qcon2016/">
-        <h2 class="post-title">
-            Progressive Web Apps，复兴序章「QCon 上海 2016」
-        </h2>
-        
-        <h3 class="post-subtitle">
-            🎞  Slides:Progressive Web Apps, Make Web Great Again. (QCon Shanghai 2016)
-        </h3>
-        
-        <div class="post-content-preview">
-            
-                
-  下滑这里查看更多内容
-
-
-Watching Fullscreen →
-
-Watching Video →
-
-
-    
-    Scanning on mobile
-
-
-Catalog
-
-
-  The State Of Web
-  Rethinking Hybridzation
-  PWA 101
-    
-      Definition
-      Add To HomeScree...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Hux on October 20, 2016
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="//2016/09/22/the-open-web/">
-        <h2 class="post-title">
-            Web 在继续离我们远去
-        </h2>
-        
-        <h3 class="post-subtitle">
-            After the release of Wechat Mini-Program
-        </h3>
-        
-        <div class="post-content-preview">
-            
-                
-  本文首发于我的知乎专栏 The Little Programmer，转载请保留链接 ;)
-
-
-今天微信又刷爆了我的朋友圈 —— 小程序，之前传说的应用号。
-
-不过这篇不谈小程序的技术细节，也不去猜测（因为知道得很清楚……），
-
-也不谈小程序会对中国互联网带来什么影响（自有产品经理会来谈……），
-
-我们说说 Web，the Web。
-
-我们常说的 Web，其实是 World Wide W...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Hux on September 22, 2016
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="//2016/06/05/pwa-in-my-pov/">
-        <h2 class="post-title">
-            Progressive Web App 之我见
-        </h2>
-        
-        <h3 class="post-subtitle">
-            🎞  Slides:Progressive Web App, in my points of view
-        </h3>
-        
-        <div class="post-content-preview">
-            
-                
-  下滑这里查看更多内容
-
-
-Watching Fullscreen →
-
-
-    
-    Scanning on mobile
-
-
-Catalog
-
-
-  WHAT is Progressive Web App?
-  1 - Installability
-  2 - App Shell
-  3 - Offline
-    
-      SERVICE WORKER!
-    
-  
-...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Hux on June 5, 2016
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="//2016/02/01/React-vs-Angular2/">
-        <h2 class="post-title">
-            「译」React vs Angular 2：冰与火之歌
-        </h2>
-        
-        <h3 class="post-subtitle">
-            React versus Angular 2: There Will Be Blood
-        </h3>
-        
-        <div class="post-content-preview">
-            
-                
-  这篇文章转载自我在知乎专栏「前端外刊评论」上发表的文章。
-
-
-Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热门框架。是时候进行一场巅峰对决了，我们来看看它如何与 React 这个 2015 年的新宠抗衡。
-
-免责声明：我之前很喜欢使用 Angular 1，不过在 2015 年转到了 React。最近我也在 Pluralsight 上发布了一门关于 R...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Hux on February 1, 2016
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="//2015/12/28/css-sucks-2015/">
-        <h2 class="post-title">
-            都 2015 年了，CSS 怎么还是这么糟糕
-        </h2>
-        
-        <h3 class="post-subtitle">
-            🎞  Slides:CSS Still Sucks 2015
-        </h3>
-        
-        <div class="post-content-preview">
-            
-                
-  下滑这里查看更多内容
-
-
-Watching Fullscreen →
-
-
-
-你也可以通过扫描二维码在手机上观看
-
-
-这个 Web Slides 开源在我的 Github 上，欢迎你帮助我完善这个展示文稿，你可以给我提 issue，可以 fork &amp; pull request。如果它能帮助到你了，希望你还能不吝啬 star 一下这个项目
-
-Catalog
-
-
-  Document...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Hux on December 28, 2015
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="//2015/12/15/ios9-safari-web/">
-        <h2 class="post-title">
-            「译」iOS 9，为前端世界都带来了些什么？
-        </h2>
-        
-        <h3 class="post-subtitle">
-            iOS 9, Safari and the Web: 3D Touch, new Responsive Web Design, Native integration and HTML5 APIs
-        </h3>
-        
-        <div class="post-content-preview">
-            
-                2015 年 9 月，Apple 重磅发布了全新的 iPhone 6s/6s Plus、iPad Pro 与全新的操作系统 watchOS 2 与 tvOS 9（是的，这货居然是第 9 版），加上已经发布的 iOS 9，它们都为前端世界带来了哪些变化呢？作为一个 web 开发者，是时候站在我们的角度来说一说了！
-
-
-  注！ 该译文存在大量英文术语，笔者将默认读者知晓 ES6、viewpor...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Hux on December 15, 2015
-    </p>
-</div>
-<hr>
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-    <li class="previous">
-        <a href="/">&larr; Newer Posts</a>
-    </li>
-    
-    
-    <li class="next">
-        <a href="/page3">Older Posts &rarr;</a>
-    </li>
-    
-</ul>
-
-
-    		</div>
-    <!-- Sidebar Container -->
-            <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-                <!-- Featured Tags -->
-                
-
-
-<section>
-    
-    <h5><a href="//archive/">FEATURED TAGS</a></h5>
-    <div class="tags">
-        
-        
-        
-        </a>
-        
-        
-                <a data-sort="0027" 
-                    href="//archive/?tag=%E7%9F%A5%E4%B9%8E"
-                    title="知乎"
-                    rel="10">知乎</a>
-        
-                <a data-sort="0018" 
-                    href="//archive/?tag=Web"
-                    title="Web"
-                    rel="19">Web</a>
-        
-                <a data-sort="0030" 
-                    href="//archive/?tag=UX%2FUI"
-                    title="UX/UI"
-                    rel="7">UX/UI</a>
-        
-                <a data-sort="0031" 
-                    href="//archive/?tag=%E4%BA%A7%E5%93%81"
-                    title="产品"
-                    rel="6">产品</a>
-        
-                <a data-sort="0031" 
-                    href="//archive/?tag=PWA"
-                    title="PWA"
-                    rel="6">PWA</a>
-        
-                <a data-sort="0033" 
-                    href="//archive/?tag=JavaScript"
-                    title="JavaScript"
-                    rel="4">JavaScript</a>
-        
-                <a data-sort="0033" 
-                    href="//archive/?tag=Slides"
-                    title="Slides"
-                    rel="4">Slides</a>
-        
-                <a data-sort="0034" 
-                    href="//archive/?tag=%E7%94%9F%E6%B4%BB"
-                    title="生活"
-                    rel="3">生活</a>
-        
-                <a data-sort="0034" 
-                    href="//archive/?tag=%E7%AC%94%E8%AE%B0"
-                    title="笔记"
-                    rel="3">笔记</a>
-        
-                <a data-sort="0034" 
-                    href="//archive/?tag=%E8%AF%91"
-                    title="译"
-                    rel="3">译</a>
-        
-                <a data-sort="0034" 
-                    href="//archive/?tag=%E9%98%BF%E9%87%8C"
-                    title="阿里"
-                    rel="3">阿里</a>
-        
-                <a data-sort="0034" 
-                    href="//archive/?tag=%F0%9F%87%AC%F0%9F%87%A7"
-                    title="🇬🇧"
-                    rel="3">🇬🇧</a>
-        
-                <a data-sort="0035" 
-                    href="//archive/?tag=%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6"
-                    title="计算机科学"
-                    rel="2">计算机科学</a>
-        
-                <a data-sort="0035" 
-                    href="//archive/?tag=%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA"
-                    title="计算理论"
-                    rel="2">计算理论</a>
-        
-                <a data-sort="0035" 
-                    href="//archive/?tag=CSS"
-                    title="CSS"
-                    rel="2">CSS</a>
-        
-                <a data-sort="0035" 
-                    href="//archive/?tag=Wechat"
-                    title="Wechat"
-                    rel="2">Wechat</a>
-        
-                <a data-sort="0035" 
-                    href="//archive/?tag=hUX+%E9%9A%8F%E6%83%B3%E5%BD%95"
-                    title="hUX 随想录"
-                    rel="2">hUX 随想录
-    </div>
-</section>
-
-
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-  <hr>
-  <h5><a href="//about/">ABOUT ME</a></h5>
-  <div class="short-about">
-    
-    <img src="/img/avatar-hux-ny.jpg" />
-    
-    
-    <p>For the next quantum leap<br>离开世界之前，一切都是过程</p>
-    
-    <!-- SNS Link -->
-    
-
-
-<ul class="list-inline">
-
-
-  
-  
-  
-  <li>
-    <a target="_blank" href="https://www.zhihu.com/people/rekeryang">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa  fa-stack-1x fa-inverse">知</i>
-      </span>
-    </a>
-  </li>
-  
-  
-  <li>
-    <a target="_blank" href="http://weibo.com/rekeycloud">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  
-  
-  
-  <li>
-    <a target="_blank" href="https://github.com/rekeryang">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  
-  
-</ul>
-  </div>
-</section>
-
-                <!-- Friends Blog -->
-                
-<hr>
-<h5>FRIENDS</h5>
-<ul class="list-inline">
-  
-  <li><a href="http://mida.re/">乱序</a></li>
-  
-  <li><a href="http://qianduan.guru/">前端外刊评论</a></li>
-  
-  <li><a href="http://lingyu.wang/">天镶的博客</a></li>
-  
-  <li><a href="http://hmqk1995.github.io">Luke 的自留地</a></li>
-  
-  <li><a href="http://ebnbin.com/">Ebn's Blog</a></li>
-  
-  <li><a href="http://blog.smdcn.net">SmdCn's Blog</a></li>
-  
-  <li><a href="https://www.ruoyaowu.com/">David's Game</a></li>
-  
-  <li><a href="http://dhong.co">DHong Say</a></li>
-  
-  <li><a href="http://ingf.github.io/">尹峰以为</a></li>
-  
-  <li><a href="http://xieminis.me/">解旻的博客</a></li>
-  
-</ul>
-
-    		</div>
-        
-	</div>
-</div>
-
-
-
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <!-- SNS Link -->
-                
-
-
-<ul class="list-inline text-center">
-
-
-  
-  
-  
-  <li>
-    <a target="_blank" href="https://www.zhihu.com/people/rekeryang">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa  fa-stack-1x fa-inverse">知</i>
-      </span>
-    </a>
-  </li>
-  
-  
-  <li>
-    <a target="_blank" href="http://weibo.com/rekeycloud">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  
-  
-  
-  <li>
-    <a target="_blank" href="https://github.com/rekeryang">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  
-  
-</ul>
-
-                <p class="copyright text-muted">
-                    Copyright &copy; Rekeryang Blog 2019
-                    <br>
-                    Powered by <a href="http://huangxuan.me">Hux Blog</a> |
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="100px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >
-                    </iframe>
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- jQuery -->
-<script src="//js/jquery.min.js "></script>
-
-<!-- Bootstrap Core JavaScript -->
-<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
-<script src="//js/bootstrap.min.js "></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="//js/hux-blog.min.js "></script>
-
-<!-- Service Worker -->
-
-<script src="//js/snackbar.js "></script>
-<script src="//js/sw-registration.js "></script>
-
-
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
+</footer></div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
     }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark">
+  <div class="main">
+    <div class="search__header">搜索</div>
+    <div class="search-bar">
+      <div class="search-box js-search-box">
+        <div class="search-box__icon-search"><i class="fas fa-search"></i></div>
+        <input type="text" />
+        <div class="search-box__icon-clear js-icon-clear">
+          <a><i class="fas fa-times"></i></a>
+        </div>
+      </div>
+      <button class="button button--theme-dark button--pill search__cancel js-search-toggle">
+        取消</button>
+    </div>
+    <div class="search-result js-search-result"></div>
+  </div>
+</div>
+<script>var SOURCES = window.TEXT_VARIABLES.sources;
+var PAHTS = window.TEXT_VARIABLES.paths;
+window.Lazyload.js([SOURCES.jquery, PAHTS.search_js], function() {
+  var search = (window.search || (window.search = {}));
+  var searchData = window.TEXT_SEARCH_DATA ? initData(window.TEXT_SEARCH_DATA) : {};
+
+  function memorize(f) {
+    var cache = {};
+    return function () {
+      var key = Array.prototype.join.call(arguments, ',');
+      if (key in cache) return cache[key];
+      else return cache[key] = f.apply(this, arguments);
+    };
+  }
+
+  function initData(data) {
+    var _data = [], i, j, key, keys, cur;
+    keys = Object.keys(data);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i], _data[key] = [];
+      for (j = 0; j < data[key].length; j++) {
+        cur = data[key][j];
+        cur.title = window.decodeUrl(cur.title);
+        cur.url = window.decodeUrl(cur.url);
+        _data[key].push(cur);
+      }
+    }
+    return _data;
+  }
+
+  /// search
+  function searchByQuery(query) {
+    var i, j, key, keys, cur, _title, result = {};
+    keys = Object.keys(searchData);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i];
+      for (j = 0; j < searchData[key].length; j++) {
+        cur = searchData[key][j], _title = cur.title;
+        if ((result[key] === undefined || result[key] && result[key].length < 4 )
+          && _title.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
+          if (result[key] === undefined) {
+            result[key] = [];
+          }
+          result[key].push(cur);
+        }
+      }
+    }
+    return result;
+  }
+
+  var renderHeader = memorize(function(header) {
+    return $('<p class="search-result__header">' + header + '</p>');
+  });
+
+  var renderItem = function(index, title, url) {
+    return $('<li class="search-result__item" data-index="' + index + '"><a class="button" href="' + url + '">' + title + '</a></li>');
+  };
+
+  function render(data) {
+    if (!data) { return null; }
+    var $root = $('<ul></ul>'), i, j, key, keys, cur, itemIndex = 0;
+    keys = Object.keys(data);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i];
+      $root.append(renderHeader(key));
+      for (j = 0; j < data[key].length; j++) {
+        cur = data[key][j];
+        $root.append(renderItem(itemIndex++, cur.title, cur.url));
+      }
+    }
+    return $root;
+  }
+
+  // search box
+  var $result = $('.js-search-result'), $resultItems;
+  var lastActiveIndex, activeIndex;
+
+  function clear() {
+    $result.html(null);
+    $resultItems = $('.search-result__item'); activeIndex = 0;
+  }
+  function onInputNotEmpty(val) {
+    $result.html(render(searchByQuery(val)));
+    $resultItems = $('.search-result__item'); activeIndex = 0;
+    $resultItems.eq(0).addClass('active');
+  }
+
+  search.clear = clear;
+  search.onInputNotEmpty = onInputNotEmpty;
+
+  function updateResultItems() {
+    lastActiveIndex >= 0 && $resultItems.eq(lastActiveIndex).removeClass('active');
+    activeIndex >= 0 && $resultItems.eq(activeIndex).addClass('active');
+  }
+
+  function moveActiveIndex(direction) {
+    var itemsCount = $resultItems ? $resultItems.length : 0;
+    if (itemsCount > 1) {
+      lastActiveIndex = activeIndex;
+      if (direction === 'up') {
+        activeIndex = (activeIndex - 1 + itemsCount) % itemsCount;
+      } else if (direction === 'down') {
+        activeIndex = (activeIndex + 1 + itemsCount) % itemsCount;
+      }
+      updateResultItems();
+    }
+  }
+
+  // Char Code: 13  Enter, 37  ⬅, 38  ⬆, 39  ➡, 40  ⬇
+  $(window).on('keyup', function(e) {
+    var modalVisible = search.getModalVisible && search.getModalVisible();
+    if (modalVisible) {
+      if (e.which === 38) {
+        modalVisible && moveActiveIndex('up');
+      } else if (e.which === 40) {
+        modalVisible && moveActiveIndex('down');
+      } else if (e.which === 13) {
+        modalVisible && $resultItems && activeIndex >= 0 && $resultItems.eq(activeIndex).children('a')[0].click();
+      }
+    }
+  });
+
+  $result.on('mouseover', '.search-result__item > a', function() {
+    var itemIndex = $(this).parent().data('index');
+    itemIndex >= 0 && (lastActiveIndex = activeIndex, activeIndex = itemIndex, updateResultItems());
+  });
+});
+</script></div></div>
+
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+</script><script>
+  window.Lazyload.js(['https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js', 'https://cdn.bootcss.com/Chart.js/2.7.2/Chart.bundle.min.js'], function() {
+    var $canvas = null, $this = null, _ctx = null, _text = '';
+    $('.language-chart').each(function(){
+      $this = $(this);
+      $canvas = $('<canvas></canvas>');
+      _text = $this.text();
+      $this.text('').append($canvas);
+      _ctx = $canvas.get(0).getContext('2d');
+      (_ctx && _text) && (new Chart(_ctx, JSON.parse(_text)) && $this.attr('data-processed', true));
+    });
+  });
+</script><script type="text/x-mathjax-config">
+	var _config = { tex2jax: {
+		inlineMath: [['$','$'], ['\\(','\\)']]
+	}};_config.TeX = { equationNumbers: { autoNumber: "all" } };MathJax.Hub.Config(_config);
 </script>
-
-<!--
-     Because of the native support for backtick-style fenced code blocks
-     right within the Markdown is landed in Github Pages,
-     From V1.6, There is no need for Highlight.js,
-     so Huxblog drops it officially.
-
-     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
-     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
-     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
--->
-<!--
-    <script>
-        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
-            hljs.initHighlightingOnLoad();
-        })
-    </script>
-    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
--->
-
-
-
-
-
-<!--fastClick.js -->
-<script>
-    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script><script>
+  window.Lazyload.js('https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js', function() {
+    mermaid.initialize({
+      startOnLoad: true
+    });
+    mermaid.init(undefined, '.language-mermaid');
+  });
 </script>
-
-
-<!-- Google Analytics -->
-
-<script>
-    // dynamic User by Hux
-    var _gaId = 'UA-49627206-1';
-    var _gaDomain = '';
-
-    // Originial
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', _gaId, _gaDomain);
-    ga('send', 'pageview');
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
 </script>
-
-
-
-<!-- Baidu Tongji -->
-
-
-
-<!-- Side Catalog -->
-
-
-
-<!-- Multi-Lingual -->
-
-
-
-
-<!-- Image to hack wechat -->
-<img src="/img/icon_wechat.png" width="0" height="0" />
-<!-- Migrate from head to bottom, no longer block render and still work -->
-
-</body>
-
+  </body>
 </html>
