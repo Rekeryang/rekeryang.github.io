@@ -30,7 +30,7 @@ key: page-about
 
 职位：普斯卡尔健康管理有限公司  CTO
 
-精通：前端设计: H5,NODE,VUE等，后端:PHP，阿里云服务器：LINUX系统 
+精通：前端设计: H5,javascript NODE,VUE等，后端:PHP,java ，阿里云服务器：LINUX系统 
 
 技术：SEO，全栈建设，APP开发等
 
